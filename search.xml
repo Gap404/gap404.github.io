@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Welcome to my blog</title>
+    <title>欢迎来到我的博客</title>
     <url>/2026/09/28/hello-world/</url>
     <content><![CDATA[<p>欢迎来到我的博客！<del>Welcome to my blog! If you get any problems when using email, you can find the answer in my <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2dhcDQwNA==">GitHub<i class="fa fa-external-link-alt"></i></span></del></p>
 <h2 id="目录-Content"><a href="#目录-Content" class="headerlink" title="目录    Content"></a>目录    <del>Content</del></h2><h3 id="Linux运维-operation"><a href="#Linux运维-operation" class="headerlink" title="Linux运维    operation"></a>Linux运维    <del>operation</del></h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">echo</span> <span class="string">&quot;Linux operation or bash scriptes!&quot;</span></span><br></pre></td></tr></table></figure>
