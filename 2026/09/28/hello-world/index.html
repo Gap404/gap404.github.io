@@ -327,37 +327,38 @@
 <script>
   (function () {
     var root = document.documentElement;
-    var btn = document.querySelector('.scheme-toggle');
-    if (!btn) return;
-    var icon = btn.querySelector('i');
 
     function apply(theme) {
       root.setAttribute('data-theme', theme);
       try { localStorage.setItem('scheme', theme); } catch (e) {}
+      var icon = document.querySelector('.scheme-toggle i');
       if (icon) {
         icon.className = theme === 'dark' ? 'fa fa-moon' : 'fa fa-sun';
       }
     }
 
-    // 同步图标
-    apply(root.getAttribute('data-theme') || 'dark');
+    function toggle() {
+      apply(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+    }
 
-    btn.addEventListener('click', function () {
-      var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-      apply(next);
-    });
+    // 给按钮绑定事件（每个按钮只绑一次）
+    function bind() {
+      var btn = document.querySelector('.scheme-toggle');
+      if (!btn || btn.dataset.bound === '1') return;
+      btn.dataset.bound = '1';
+      btn.addEventListener('click', toggle);
+    }
+
+    // 初始化
+    function init() {
+      bind();
+      apply(root.getAttribute('data-theme') || 'dark');
+    }
+
+    init();
 
     // Pjax 页面切换后按钮可能重建，重新绑定
-    document.addEventListener('page:loaded', function () {
-      var b = document.querySelector('.scheme-toggle');
-      if (b && !b.dataset.bound) {
-        b.dataset.bound = '1';
-        b.addEventListener('click', function () {
-          apply(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
-        });
-      }
-      apply(root.getAttribute('data-theme') || 'dark');
-    });
+    document.addEventListener('page:loaded', init);
   })();
 </script>
 
