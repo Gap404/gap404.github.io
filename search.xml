@@ -101,6 +101,15 @@
 ]]></content>
   </entry>
   <entry>
+    <title>linux</title>
+    <url>/2026/09/28/hi/</url>
+    <content><![CDATA[<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&quot;Hello,World!&quot;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;First Blog Article!&quot;</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>网路检查</title>
     <url>/2026/01/10/network_check/</url>
     <content><![CDATA[<p>你说得对。<strong>从 Linux 运维视角，网络排查的核心确实应该围绕 <code>ping</code>、<code>curl</code>、<code>nc</code>、<code>ss/netstat</code> 展开</strong>，而不是上来堆一大批配置命令。</p>
@@ -682,15 +691,6 @@
       <tags>
         <tag>Linux</tag>
         <tag>NetWork</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>linux</title>
-    <url>/2026/09/28/hi/</url>
-    <content><![CDATA[<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&quot;Hello,World!&quot;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;First Blog Article!&quot;</span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <tags>
-        <tag>Linux</tag>
       </tags>
   </entry>
 </search>
