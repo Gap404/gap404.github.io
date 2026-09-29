@@ -1356,7 +1356,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #942bf7;
+    background: #cb6fb1;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -3190,14 +3190,14 @@ html[data-theme="dark"] .tag-cloud-10 {
 .tag-cloud-tags a {
   transition: color 0.2s ease, border-bottom-color 0.2s ease;
 }
-.tag-cloud a:hover,
-.tag-cloud-tags a:hover,
-.tag-cloud a:focus,
-.tag-cloud-tags a:focus,
-.tag-cloud a:active,
-.tag-cloud-tags a:active {
-  color: #cba6f7 !important;
-  border-bottom-color: #cba6f7 !important;
+html[data-theme="dark"] .tag-cloud a:hover,
+html[data-theme="dark"] .tag-cloud a:focus,
+html[data-theme="dark"] .tag-cloud a:active,
+html[data-theme="dark"] .tag-cloud-tags a:hover,
+html[data-theme="dark"] .tag-cloud-tags a:focus,
+html[data-theme="dark"] .tag-cloud-tags a:active {
+  color: #fff !important;
+  border-bottom-color: #fff !important;
 }
 html[data-theme="light"] .tag-cloud a:hover,
 html[data-theme="light"] .tag-cloud a:focus,
@@ -3205,6 +3205,6 @@ html[data-theme="light"] .tag-cloud a:active,
 html[data-theme="light"] .tag-cloud-tags a:hover,
 html[data-theme="light"] .tag-cloud-tags a:focus,
 html[data-theme="light"] .tag-cloud-tags a:active {
-  color: #8839ef !important;
-  border-bottom-color: #8839ef !important;
+  color: #11111b !important;
+  border-bottom-color: #11111b !important;
 }
