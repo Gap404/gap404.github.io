@@ -43,6 +43,9 @@
 </blockquote>
 <p><span class="exturl" data-url="aHR0cHM6Ly93d3cubmdpbngub3JnLw==">beginner<i class="fa fa-external-link-alt"></i></span></p>
 ]]></content>
+      <categories>
+        <category>计算机</category>
+      </categories>
       <tags>
         <tag>Server</tag>
       </tags>
@@ -80,6 +83,9 @@
 <hr>
 <p><span class="exturl" data-url="aHR0cHM6Ly93d3cuY25ibG9ncy5jb20vc3BhcmtkZXYvcC85NjUxNjIyLmh0bWw=">文章出处<i class="fa fa-external-link-alt"></i></span></p>
 ]]></content>
+      <categories>
+        <category>计算机</category>
+      </categories>
       <tags>
         <tag>Linux</tag>
       </tags>
@@ -99,12 +105,18 @@
 </ul>
 <h3 id="非计算机-Not-Computer"><a href="#非计算机-Not-Computer" class="headerlink" title="非计算机    Not Computer"></a>非计算机    <del>Not Computer</del></h3><h3 id="有兴趣的话-怎么联系我"><a href="#有兴趣的话-怎么联系我" class="headerlink" title="有兴趣的话,怎么联系我"></a>有兴趣的话,怎么联系我</h3><p><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2dhcDQwNA==">github<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly9iYWlkdS5jb20vcz93ZD0lRTYlODglOTElRTglODIlQUYlRTUlQUUlOUElRTQlQjglOEQlRTUlOTElOEElRTglQUYlODklRTQlQkQlQTA=">telegram<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly95b3V0dWJlLmNvbS8=">youtube<i class="fa fa-external-link-alt"></i></span></p>
 ]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
   </entry>
   <entry>
     <title>linux</title>
     <url>/2026/09/28/hi/</url>
     <content><![CDATA[<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&quot;Hello,World!&quot;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;First Blog Article!&quot;</span></span><br></pre></td></tr></table></figure>
 ]]></content>
+      <categories>
+        <category>计算机</category>
+      </categories>
       <tags>
         <tag>Linux</tag>
       </tags>
@@ -688,6 +700,9 @@
 
 <p>这才是 Linux 运维视角下的网络排查。</p>
 ]]></content>
+      <categories>
+        <category>计算机</category>
+      </categories>
       <tags>
         <tag>Linux</tag>
         <tag>NetWork</tag>
