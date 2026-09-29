@@ -20,25 +20,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"www.etcnotes.top","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.29.0","exturl":true,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"atom-one-light","dark":"atom-one-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":true,"style":"flat"},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js" defer></script>
 
-    <meta name="description" content="立志成为Linux大牛">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Gap的博客">
-<meta property="og:url" content="https://www.etcnotes.top/index.html">
+    <meta name="description" content="你说得对。从 Linux 运维视角，网络排查的核心确实应该围绕 ping、curl、nc、ss&#x2F;netstat 展开，而不是上来堆一大批配置命令。 我前面的回答偏向“系统网络配置排错”，没有突出运维中最重要的思路：  先定义故障现象，再用最小工具验证网络路径、端口、服务和连接状态。  这几类命令不是互相替代的，而是分别回答不同问题。 一、为什么是这四类命令   命令 主要回答的问题 所在层次">
+<meta property="og:type" content="article">
+<meta property="og:title" content="网路检查">
+<meta property="og:url" content="https://www.etcnotes.top/2026/01/10/network_check/index.html">
 <meta property="og:site_name" content="Gap的博客">
-<meta property="og:description" content="立志成为Linux大牛">
+<meta property="og:description" content="你说得对。从 Linux 运维视角，网络排查的核心确实应该围绕 ping、curl、nc、ss&#x2F;netstat 展开，而不是上来堆一大批配置命令。 我前面的回答偏向“系统网络配置排错”，没有突出运维中最重要的思路：  先定义故障现象，再用最小工具验证网络路径、端口、服务和连接状态。  这几类命令不是互相替代的，而是分别回答不同问题。 一、为什么是这四类命令   命令 主要回答的问题 所在层次">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-01-10T05:26:00.000Z">
+<meta property="article:modified_time" content="2026-09-29T05:06:04.514Z">
 <meta property="article:author" content="Gap404">
-<meta property="article:tag" content="linux">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="NetWork">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://www.etcnotes.top/">
+<link rel="canonical" href="https://www.etcnotes.top/2026/01/10/network_check/">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"en","comments":"","permalink":"","path":"index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://www.etcnotes.top/2026/01/10/network_check/","path":"2026/01/10/network_check/","title":"网路检查"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Gap的博客</title>
+<title>网路检查 | Gap的博客</title>
   
 
 
@@ -97,7 +100,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title">Gap的博客</h1>
+      <p class="site-title">Gap的博客</p>
       <i class="logo-line"></i>
     </a>
       <p class="site-subtitle" itemprop="description">个人博客</p>
@@ -150,7 +153,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -163,6 +166,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E4%B8%BA%E4%BB%80%E4%B9%88%E6%98%AF%E8%BF%99%E5%9B%9B%E7%B1%BB%E5%91%BD%E4%BB%A4"><span class="nav-number">1.</span> <span class="nav-text">一、为什么是这四类命令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E3%80%81ping%EF%BC%9A%E5%8F%AA%E8%AF%81%E6%98%8E-IP-%E5%B1%82%E5%9F%BA%E6%9C%AC%E5%8F%AF%E8%BE%BE"><span class="nav-number">2.</span> <span class="nav-text">二、ping：只证明 IP 层基本可达</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-ping-%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="nav-number">2.1.</span> <span class="nav-text">1. ping 的作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E8%BF%90%E7%BB%B4%E4%B8%8A%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8-ping"><span class="nav-number">2.2.</span> <span class="nav-text">2. 运维上如何使用 ping</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BD%91%E5%85%B3%E4%B8%8D%E9%80%9A"><span class="nav-number">2.2.1.</span> <span class="nav-text">网关不通</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BD%91%E5%85%B3%E9%80%9A%EF%BC%8C%E5%85%AC%E7%BD%91-IP-%E4%B8%8D%E9%80%9A"><span class="nav-number">2.2.2.</span> <span class="nav-text">网关通，公网 IP 不通</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%AC%E7%BD%91-IP-%E9%80%9A%EF%BC%8C%E5%9F%9F%E5%90%8D%E4%B8%8D%E9%80%9A"><span class="nav-number">2.2.3.</span> <span class="nav-text">公网 IP 通，域名不通</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-ping-%E4%B8%8D%E8%83%BD%E8%AF%81%E6%98%8E%E4%BB%80%E4%B9%88"><span class="nav-number">2.3.</span> <span class="nav-text">3. ping 不能证明什么</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%89%E3%80%81nc%EF%BC%9A%E6%B5%8B%E8%AF%95-TCP-UDP-%E7%AB%AF%E5%8F%A3%EF%BC%8C%E6%AF%94-ping-%E6%9B%B4%E6%8E%A5%E8%BF%91%E6%9C%8D%E5%8A%A1"><span class="nav-number">3.</span> <span class="nav-text">三、nc：测试 TCP&#x2F;UDP 端口，比 ping 更接近服务</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E6%B5%8B%E8%AF%95-TCP-%E7%AB%AF%E5%8F%A3"><span class="nav-number">3.1.</span> <span class="nav-text">1. 测试 TCP 端口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-refused-%E5%92%8C-timeout-%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">3.2.</span> <span class="nav-text">2. refused 和 timeout 的区别</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Connection-refused"><span class="nav-number">3.2.1.</span> <span class="nav-text">Connection refused</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Operation-timed-out"><span class="nav-number">3.2.2.</span> <span class="nav-text">Operation timed out</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E6%B5%8B%E8%AF%95%E5%B8%B8%E8%A7%81%E6%9C%8D%E5%8A%A1"><span class="nav-number">3.3.</span> <span class="nav-text">3. 测试常见服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E8%83%BD%E7%94%A8-ping-%E4%BB%A3%E6%9B%BF-nc"><span class="nav-number">3.4.</span> <span class="nav-text">4. 为什么不能用 ping 代替 nc</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E6%B5%8B%E8%AF%95-UDP-%E7%9A%84%E9%99%90%E5%88%B6"><span class="nav-number">3.5.</span> <span class="nav-text">5. 测试 UDP 的限制</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%9B%E3%80%81curl%EF%BC%9A%E4%BB%8E%E5%BA%94%E7%94%A8%E5%B1%82%E7%A1%AE%E8%AE%A4%E6%9C%8D%E5%8A%A1%E7%9C%9F%E7%9A%84%E5%8F%AF%E7%94%A8"><span class="nav-number">4.</span> <span class="nav-text">四、curl：从应用层确认服务真的可用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%9F%BA%E7%A1%80-HTTP-%E6%A3%80%E6%9F%A5"><span class="nav-number">4.1.</span> <span class="nav-text">1. 基础 HTTP 检查</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E8%AF%A6%E7%BB%86%E8%A7%82%E5%AF%9F-DNS%E3%80%81TCP%E3%80%81TLS%E3%80%81HTTP"><span class="nav-number">4.2.</span> <span class="nav-text">2. 详细观察 DNS、TCP、TLS、HTTP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E6%9F%A5%E7%9C%8B%E6%AF%8F%E4%B8%AA%E9%98%B6%E6%AE%B5%E8%80%97%E6%97%B6"><span class="nav-number">4.3.</span> <span class="nav-text">3. 查看每个阶段耗时</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E5%BC%BA%E5%88%B6-IPv4-%E6%88%96-IPv6"><span class="nav-number">4.4.</span> <span class="nav-text">4. 强制 IPv4 或 IPv6</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E6%B5%8B%E8%AF%95%E4%BB%A3%E7%90%86"><span class="nav-number">4.5.</span> <span class="nav-text">5. 测试代理</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%94%E3%80%81ss%EF%BC%9A%E5%88%A4%E6%96%AD%E6%9C%AC%E6%9C%BA%E6%9C%8D%E5%8A%A1%E5%92%8C%E8%BF%9E%E6%8E%A5%E7%8A%B6%E6%80%81"><span class="nav-number">5.</span> <span class="nav-text">五、ss：判断本机服务和连接状态</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E6%9F%A5%E7%9C%8B%E7%9B%91%E5%90%AC%E7%AB%AF%E5%8F%A3"><span class="nav-number">5.1.</span> <span class="nav-text">1. 查看监听端口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E6%9F%A5%E7%9C%8B%E6%8C%87%E5%AE%9A%E7%AB%AF%E5%8F%A3"><span class="nav-number">5.2.</span> <span class="nav-text">2. 查看指定端口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E6%9F%A5%E7%9C%8B%E5%BD%93%E5%89%8D%E8%BF%9E%E6%8E%A5"><span class="nav-number">5.3.</span> <span class="nav-text">3. 查看当前连接</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ESTAB"><span class="nav-number">5.3.1.</span> <span class="nav-text">ESTAB</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SYN-SENT"><span class="nav-number">5.3.2.</span> <span class="nav-text">SYN-SENT</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SYN-RECV"><span class="nav-number">5.3.3.</span> <span class="nav-text">SYN-RECV</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TIME-WAIT"><span class="nav-number">5.3.4.</span> <span class="nav-text">TIME-WAIT</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CLOSE-WAIT"><span class="nav-number">5.3.5.</span> <span class="nav-text">CLOSE-WAIT</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E6%9F%A5%E7%9C%8B%E7%BB%9F%E8%AE%A1%E6%A6%82%E5%86%B5"><span class="nav-number">5.4.</span> <span class="nav-text">4. 查看统计概况</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E7%94%A8-netstat-%E7%9A%84%E5%9C%BA%E6%99%AF"><span class="nav-number">5.5.</span> <span class="nav-text">5. 用 netstat 的场景</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%AD%E3%80%81%E7%9C%9F%E6%AD%A3%E7%9A%84%E8%BF%90%E7%BB%B4%E6%8E%92%E6%9F%A5%E6%B5%81%E7%A8%8B"><span class="nav-number">6.</span> <span class="nav-text">六、真正的运维排查流程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E6%AD%A5%EF%BC%9A%E7%A1%AE%E8%AE%A4-IP-%E5%B1%82"><span class="nav-number">6.1.</span> <span class="nav-text">第一步：确认 IP 层</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E6%AD%A5%EF%BC%9A%E7%A1%AE%E8%AE%A4-TCP-%E7%AB%AF%E5%8F%A3"><span class="nav-number">6.2.</span> <span class="nav-text">第二步：确认 TCP 端口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%89%E6%AD%A5%EF%BC%9A%E5%9C%A8%E6%9C%8D%E5%8A%A1%E7%AB%AF%E6%A3%80%E6%9F%A5%E7%9B%91%E5%90%AC%E7%8A%B6%E6%80%81"><span class="nav-number">6.3.</span> <span class="nav-text">第三步：在服务端检查监听状态</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E5%9B%9B%E6%AD%A5%EF%BC%9A%E7%A1%AE%E8%AE%A4-HTTP-%E5%BA%94%E7%94%A8%E5%B1%82"><span class="nav-number">6.4.</span> <span class="nav-text">第四步：确认 HTTP 应用层</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%BA%94%E6%AD%A5%EF%BC%9A%E8%A7%82%E5%AF%9F%E8%BF%9E%E6%8E%A5%E7%8A%B6%E6%80%81"><span class="nav-number">6.5.</span> <span class="nav-text">第五步：观察连接状态</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%83%E3%80%81%E7%94%A8%E5%9B%9B%E4%B8%AA%E5%91%BD%E4%BB%A4%E5%BF%AB%E9%80%9F%E5%AE%9A%E4%BD%8D%E6%95%85%E9%9A%9C%E7%B1%BB%E5%9E%8B"><span class="nav-number">7.</span> <span class="nav-text">七、用四个命令快速定位故障类型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%BA%E6%99%AF%E4%B8%80%EF%BC%9A%E6%9C%8D%E5%8A%A1%E5%AE%8C%E5%85%A8%E4%B8%8D%E5%8F%AF%E8%BE%BE"><span class="nav-number">7.1.</span> <span class="nav-text">场景一：服务完全不可达</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%BA%E6%99%AF%E4%BA%8C%EF%BC%9A%E7%BD%91%E7%AB%99%E5%BE%88%E6%85%A2"><span class="nav-number">7.2.</span> <span class="nav-text">场景二：网站很慢</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%BA%E6%99%AF%E4%B8%89%EF%BC%9ASSH-%E8%BF%9E%E4%B8%8D%E4%B8%8A"><span class="nav-number">7.3.</span> <span class="nav-text">场景三：SSH 连不上</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%BA%E6%99%AF%E5%9B%9B%EF%BC%9A%E6%9C%AC%E6%9C%BA%E6%9C%8D%E5%8A%A1%E5%A4%96%E9%83%A8%E8%AE%BF%E9%97%AE%E5%A4%B1%E8%B4%A5"><span class="nav-number">7.4.</span> <span class="nav-text">场景四：本机服务外部访问失败</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%AB%E3%80%81%E4%B8%BA%E4%BB%80%E4%B9%88-ip%E3%80%81resolvectl%E3%80%81ip-route-%E4%BB%8D%E7%84%B6%E4%B8%8D%E8%83%BD%E5%AE%8C%E5%85%A8%E7%9C%81%E7%95%A5"><span class="nav-number">8.</span> <span class="nav-text">八、为什么 ip、resolvectl、ip route 仍然不能完全省略</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%80%E5%AE%9E%E7%94%A8%E7%9A%84%E6%9C%80%E5%B0%8F%E6%B8%85%E5%8D%95"><span class="nav-number">8.1.</span> <span class="nav-text">最实用的最小清单</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -204,389 +208,17 @@
 
     </div>
 
-    <div class="main-inner index posts-expand">
+    <div class="main-inner post posts-expand">
 
-    
+
+  
 
 
 <div class="post-block">
   
   
 
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://www.etcnotes.top/2026/09/28/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/image/pxArt_8.png">
-      <meta itemprop="name" content="Gap404">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Gap的博客">
-      <meta itemprop="description" content="立志成为Linux大牛">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | Gap的博客">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2026/09/28/hello-world/" class="post-title-link" itemprop="url">欢迎来到我的博客</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2026-09-28 21:40:54" itemprop="dateCreated datePublished" datetime="2026-09-28T21:40:54+08:00">2026-09-28</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>欢迎来到我的博客！<del>Welcome to my blog! If you get any problems when using email, you can find the answer in my <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2dhcDQwNA==">GitHub<i class="fa fa-external-link-alt"></i></span></del></p>
-<h2 id="目录-Content"><a href="#目录-Content" class="headerlink" title="目录    Content"></a>目录    <del>Content</del></h2><h3 id="Linux运维-operation"><a href="#Linux运维-operation" class="headerlink" title="Linux运维    operation"></a>Linux运维    <del>operation</del></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">echo</span> <span class="string">&quot;Linux operation or bash scriptes!&quot;</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="服务器-Server"><a href="#服务器-Server" class="headerlink" title="服务器   Server"></a>服务器   <del>Server</del></h3><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="attribute">vim</span> /etc/nigix/nginx.conf  <span class="comment"># nginx learing</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>我有霉国服务器 <del>I have a USA cloud server</del></li>
-</ul>
-<h3 id="非计算机-Not-Computer"><a href="#非计算机-Not-Computer" class="headerlink" title="非计算机    Not Computer"></a>非计算机    <del>Not Computer</del></h3><h3 id="有兴趣的话-怎么联系我"><a href="#有兴趣的话-怎么联系我" class="headerlink" title="有兴趣的话,怎么联系我"></a>有兴趣的话,怎么联系我</h3><p><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2dhcDQwNA==">github<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly9iYWlkdS5jb20vcz93ZD0lRTYlODglOTElRTglODIlQUYlRTUlQUUlOUElRTQlQjglOEQlRTUlOTElOEElRTglQUYlODklRTQlQkQlQTA=">telegram<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly95b3V0dWJlLmNvbS8=">youtube<i class="fa fa-external-link-alt"></i></span></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://www.etcnotes.top/2026/09/28/hi/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/image/pxArt_8.png">
-      <meta itemprop="name" content="Gap404">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Gap的博客">
-      <meta itemprop="description" content="立志成为Linux大牛">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | Gap的博客">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2026/09/28/hi/" class="post-title-link" itemprop="url">linux</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2026-09-28 20:48:54" itemprop="dateCreated datePublished" datetime="2026-09-28T20:48:54+08:00">2026-09-28</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2026-09-29 02:20:39" itemprop="dateModified" datetime="2026-09-29T02:20:39+08:00">2026-09-29</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&quot;Hello,World!&quot;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;First Blog Article!&quot;</span></span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://www.etcnotes.top/2026/01/10/Nginx/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/image/pxArt_8.png">
-      <meta itemprop="name" content="Gap404">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Gap的博客">
-      <meta itemprop="description" content="立志成为Linux大牛">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | Gap的博客">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2026/01/10/Nginx/" class="post-title-link" itemprop="url">Nginx_入门</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2026-01-10 13:26:00" itemprop="dateCreated datePublished" datetime="2026-01-10T13:26:00+08:00">2026-01-10</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2026-09-29 13:05:02" itemprop="dateModified" datetime="2026-09-29T13:05:02+08:00">2026-09-29</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>#nginx #linux </p>
-<ul>
-<li><p>nginx及其模块的工作方式在配置文件中确定。默认情况下，配置文件名为<code>nginx.conf</code>，并放置在目录<code>/usr/local/nginx/conf</code>、<code>/etc/nginx</code>或<code>/usr/local/etc/nginx</code>中</p>
-</li>
-<li><p>in this case a signal is sent directly to a process with a given process ID. The process ID of the nginx master process is written, by default, to the <code>nginx.pid</code> in the directory <code>/usr/local/nginx/logs</code> or <code>/var/run</code>. For example, if the master process ID is 1628, to send the QUIT signal resulting in nginx’s graceful shutdown, execute:</p>
-</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">kill</span> -s QUIT 1628</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<ul>
-<li>For getting the list of all running nginx processes, the <code>ps</code> utility may be used, for example, in the following way:</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps -ax | grep nginx</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p> [!NOTE]For more information on sending signals to nginx, see <span class="exturl" data-url="aHR0cHM6Ly9uZ2lueC5vcmcvZW4vZG9jcy9jb250cm9sLmh0bWw=">Controlling nginx<i class="fa fa-external-link-alt"></i></span>.</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#重启前不要忘记用 sudo nginx -t 检查配置是否无错</span></span><br><span class="line"><span class="built_in">sudo</span> nginx -s reload <span class="comment">#每次修改完配置文件都需要重新启动nginx</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>  [ !NOTE]不推荐使用<br>sudo systemctl restart nginx 因为这个样子会中断正在运行的服务，上面则反之  </p>
-</blockquote>
-<h4 id="配置文件的结构"><a href="#配置文件的结构" class="headerlink" title="配置文件的结构"></a>配置文件的结构</h4><p>nginx由由配置文件中指定的指令控制的模块组成。指令分为简单指令和块指令。一个简单的指令由名称和参数组成，用空格分隔，<strong>并以分号（;）结尾</strong>。块指令的结构与简单指令相同，但它不是分号，而是以一组被大括号（<code>{</code>和<code>}</code>）包围的附加指令结束。如果块指令可以在大括号内包含其他指令，则称为上下文（示例：<span class="exturl" data-url="aHR0cHM6Ly9uZ2lueC5vcmcvZW4vZG9jcy9uZ3hfY29yZV9tb2R1bGUuaHRtbCNldmVudHM=">事件<i class="fa fa-external-link-alt"></i></span>、<span class="exturl" data-url="aHR0cHM6Ly9uZ2lueC5vcmcvZW4vZG9jcy9odHRwL25neF9odHRwX2NvcmVfbW9kdWxlLmh0bWwjaHR0cA==">http<i class="fa fa-external-link-alt"></i></span>、<span class="exturl" data-url="aHR0cHM6Ly9uZ2lueC5vcmcvZW4vZG9jcy9odHRwL25neF9odHRwX2NvcmVfbW9kdWxlLmh0bWwjc2VydmVy">服务器<i class="fa fa-external-link-alt"></i></span>和<span class="exturl" data-url="aHR0cHM6Ly9uZ2lueC5vcmcvZW4vZG9jcy9odHRwL25neF9odHRwX2NvcmVfbW9kdWxlLmh0bWwjbG9jYXRpb24=">位置<i class="fa fa-external-link-alt"></i></span>）。</p>
-<p>放置在任何上下文之外的配置文件中的指令都被视为在<span class="exturl" data-url="aHR0cHM6Ly9uZ2lueC5vcmcvZW4vZG9jcy9uZ3hfY29yZV9tb2R1bGUuaHRtbA==">主上<i class="fa fa-external-link-alt"></i></span>下文中。<code>events</code>和<code>http</code>指令位于<code>main</code>下文、<code>http</code>中的<code>server</code>和<code>server</code>中<code>location</code>中。</p>
-<p><code>#</code>符号后的其余行被视为注释。</p>
-<h4 id="主要框架"><a href="#主要框架" class="headerlink" title="主要框架"></a>主要框架</h4><ul>
-<li>worker_processes</li>
-<li>event</li>
-<li>http{mime.types}</li>
-<li>server{ listen;host_name;location}</li>
-</ul>
-<h3 id="location块里的方法名"><a href="#location块里的方法名" class="headerlink" title="location块里的方法名"></a>location块里的方法名</h3><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">root</span> URL <span class="comment">#指定根目录</span></span><br><span class="line">rewrite DIR URL <span class="comment">#重写到URL</span></span><br><span class="line">return 状态码 URL <span class="comment">#重定向或者返回状态码</span></span><br><span class="line">alias URL</span><br></pre></td></tr></table></figure>
-
-
-<h4 id="location-正则表达式"><a href="#location-正则表达式" class="headerlink" title="location 正则表达式"></a>location 正则表达式</h4><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#还没有公布，未学习到</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h3><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">   <span class="comment">#gzip  on;</span></span><br><span class="line"></span><br><span class="line">   <span class="section">server</span> &#123;</span><br><span class="line">       <span class="attribute">listen</span>       <span class="number">8080</span>;</span><br><span class="line">       <span class="attribute">server_name</span>  localhost;</span><br><span class="line"></span><br><span class="line"><span class="attribute">rewrite</span> /url/ /; <span class="comment">#会拼接root+/=/usr/share/nginx/html/</span></span><br><span class="line">       <span class="comment">#access_log  logs/host.access.log  main;</span></span><br><span class="line">       <span class="section">location</span> /&#123;</span><br><span class="line">           <span class="attribute">root</span>   /usr/share/nginx/html;</span><br><span class="line">           <span class="attribute">index</span>  index.html index.htm;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="section">location</span>  <span class="regexp">~  /url/[1-2]</span>&#123;</span><br><span class="line">    <span class="attribute">return</span> <span class="number">307</span> /;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="section">location</span> = /image&#123;</span><br><span class="line">    <span class="attribute">alias</span> /usr/share/nginx/html/url/image/a.jpg;</span><br><span class="line">    <span class="attribute">default_type</span> image/jpeg;</span><br><span class="line">    &#125;</span><br><span class="line">    &#125;</span><br><span class="line">       <span class="comment">#error_page  404              /404.html;</span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p> [!WARN]rewrite 的网页最好写绝对路径，重写浏览器只解析相对路径，只看浏览器的URL,也就是定义要重写的路径</p>
-</blockquote>
-<p><span class="exturl" data-url="aHR0cHM6Ly93d3cubmdpbngub3JnLw==">beginner<i class="fa fa-external-link-alt"></i></span></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://www.etcnotes.top/2026/01/10/file_modifice/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/image/pxArt_8.png">
-      <meta itemprop="name" content="Gap404">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Gap的博客">
-      <meta itemprop="description" content="立志成为Linux大牛">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | Gap的博客">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2026/01/10/file_modifice/" class="post-title-link" itemprop="url">文件权限</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2026-01-10 13:26:00" itemprop="dateCreated datePublished" datetime="2026-01-10T13:26:00+08:00">2026-01-10</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2026-09-29 13:04:03" itemprop="dateModified" datetime="2026-09-29T13:04:03+08:00">2026-09-29</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="SUID"><a href="#SUID" class="headerlink" title="SUID"></a>SUID</h2><ul>
-<li>owner x位为s的</li>
-<li>SUID 权限仅对二进制可执行文件有效</li>
-<li>如果执行者对于该二进制可执行文件<strong>具有 x 的权限，执行者将具有该文件的所有者的权限</strong></li>
-<li>本权限仅在执行该二进制可执行文件的过程中有效<br>1.例如passwd程序</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">~&gt; $ <span class="built_in">ls</span> /bin/passwd -al</span><br><span class="line">-rwsr-xr-x 1 root root 80792 Jul 30 18:04 /bin/passwd</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">sudo</span> <span class="built_in">chmod</span> 4755 /bin/cat</span><br></pre></td></tr></table></figure>
-
-<h2 id="SGID"><a href="#SGID" class="headerlink" title="SGID"></a>SGID</h2><ul>
-<li>group s位为s的</li>
-<li>用户若对此目录具有 r 和 x 权限，该用户能够进入该目录</li>
-<li>用户在此<strong>目录</strong>下的有效<strong>用户组</strong>将变成<strong>该目录的用户组</strong></li>
-<li>若用户在此目录下拥有 w 权限，则用户所创建的新文件的用户组与该目录的用户组相同</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">sudo</span> <span class="built_in">chmod</span> 2775 testdir</span><br></pre></td></tr></table></figure>
-
-<h2 id="SBIT"><a href="#SBIT" class="headerlink" title="SBIT"></a>SBIT</h2><ul>
-<li>SBIT 目前只对目录有效，用来阻止非文件的所有者删除文件。</li>
-</ul>
-<ol>
-<li>比较常见的例子就是 &#x2F;tmp 目录：</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">~&gt; $ <span class="built_in">ls</span> -ld /tmp</span><br><span class="line">drwxrwxrwt 23 root root 600 Sep 24 22:46 /tmp</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 通过符号类型改变权限</span></span><br><span class="line"><span class="comment"># 除了使用数字来修改权限，还可以使用符号：</span></span><br><span class="line">$ <span class="built_in">chmod</span> u+s testfile <span class="comment"># 为 testfile 文件加上 SUID 权限。</span></span><br><span class="line">$ <span class="built_in">chmod</span> g+s testdir  <span class="comment"># 为 testdir 目录加上 SGID 权限。</span></span><br><span class="line">$ <span class="built_in">chmod</span> o+t testdir  <span class="comment"># 为 testdir 目录加上 SBIT 权限。</span></span><br></pre></td></tr></table></figure>
-<hr>
-<p><span class="exturl" data-url="aHR0cHM6Ly93d3cuY25ibG9ncy5jb20vc3BhcmtkZXYvcC85NjUxNjIyLmh0bWw=">文章出处<i class="fa fa-external-link-alt"></i></span></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
     <link itemprop="mainEntityOfPage" href="https://www.etcnotes.top/2026/01/10/network_check/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -600,13 +232,13 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | Gap的博客">
+      <meta itemprop="name" content="网路检查 | Gap的博客">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2026/01/10/network_check/" class="post-title-link" itemprop="url">网路检查</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          网路检查
+        </h1>
 
         <div class="post-meta-container">
           <div class="post-meta">
@@ -635,8 +267,7 @@
     
     
     
-    <div class="post-body" itemprop="articleBody">
-          <p>你说得对。<strong>从 Linux 运维视角，网络排查的核心确实应该围绕 <code>ping</code>、<code>curl</code>、<code>nc</code>、<code>ss/netstat</code> 展开</strong>，而不是上来堆一大批配置命令。</p>
+    <div class="post-body" itemprop="articleBody"><p>你说得对。<strong>从 Linux 运维视角，网络排查的核心确实应该围绕 <code>ping</code>、<code>curl</code>、<code>nc</code>、<code>ss/netstat</code> 展开</strong>，而不是上来堆一大批配置命令。</p>
 <p>我前面的回答偏向“系统网络配置排错”，没有突出运维中最重要的思路：</p>
 <blockquote>
 <p><strong>先定义故障现象，再用最小工具验证网络路径、端口、服务和连接状态。</strong></p>
@@ -1212,7 +843,6 @@
 
 <p>这才是 Linux 运维视角下的网络排查。</p>
 
-      
     </div>
 
     
@@ -1220,11 +850,26 @@
     
 
     <footer class="post-footer">
-        <div class="post-eof"></div>
-      
+          <div class="post-tags">
+              <a href="/tags/Linux/" rel="tag"># Linux</a>
+              <a href="/tags/NetWork/" rel="tag"># NetWork</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+            </div>
+            <div class="post-nav-item">
+                <a href="/2026/01/10/file_modifice/" rel="next" title="文件权限">
+                  文件权限 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
     </footer>
   </article>
 </div>
+
 
 
 
