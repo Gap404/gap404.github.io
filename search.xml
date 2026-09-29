@@ -53,6 +53,27 @@
       </tags>
   </entry>
   <entry>
+    <title>欢迎来到我的博客</title>
+    <url>/2026/09/29/hello-world/</url>
+    <content><![CDATA[<p>欢迎来到我的博客！<del>Welcome to my blog! If you get any problems when using email, you can find the answer in my <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2dhcDQwNA==">GitHub<i class="fa fa-external-link-alt"></i></span></del></p>
+<span id="more"></span>
+
+<h2 id="目录-Content"><a href="#目录-Content" class="headerlink" title="目录    Content"></a>目录    <del>Content</del></h2><h3 id="Linux运维-operation"><a href="#Linux运维-operation" class="headerlink" title="Linux运维    operation"></a>Linux运维    <del>operation</del></h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">echo</span> <span class="string">&quot;Linux operation or bash scriptes!&quot;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="服务器-Server"><a href="#服务器-Server" class="headerlink" title="服务器   Server"></a>服务器   <del>Server</del></h3><figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">$ <span class="attribute">vim</span> /etc/nigix/nginx.conf  <span class="comment"># nginx learing</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>我有霉国服务器 <del>I have a USA cloud server</del></li>
+</ul>
+<h3 id="非计算机-Not-Computer"><a href="#非计算机-Not-Computer" class="headerlink" title="非计算机    Not Computer"></a>非计算机    <del>Not Computer</del></h3><h3 id="有兴趣的话-怎么联系我"><a href="#有兴趣的话-怎么联系我" class="headerlink" title="有兴趣的话,怎么联系我"></a>有兴趣的话,怎么联系我</h3><p><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2dhcDQwNA==">github<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly9iYWlkdS5jb20vcz93ZD0lRTYlODglOTElRTglODIlQUYlRTUlQUUlOUElRTQlQjglOEQlRTUlOTElOEElRTglQUYlODklRTQlQkQlQTA=">telegram<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly95b3V0dWJlLmNvbS8=">youtube<i class="fa fa-external-link-alt"></i></span></p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+  </entry>
+  <entry>
     <title>文件权限</title>
     <url>/2026/01/10/file_modifice/</url>
     <content><![CDATA[<h2 id="SUID"><a href="#SUID" class="headerlink" title="SUID"></a>SUID</h2><ul>
@@ -96,31 +117,9 @@
       </tags>
   </entry>
   <entry>
-    <title>欢迎来到我的博客</title>
-    <url>/2026/09/29/hello-world/</url>
-    <content><![CDATA[<p>欢迎来到我的博客！<del>Welcome to my blog! If you get any problems when using email, you can find the answer in my <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2dhcDQwNA==">GitHub<i class="fa fa-external-link-alt"></i></span></del></p>
-<span id="more"></span>
-
-<h2 id="目录-Content"><a href="#目录-Content" class="headerlink" title="目录    Content"></a>目录    <del>Content</del></h2><h3 id="Linux运维-operation"><a href="#Linux运维-operation" class="headerlink" title="Linux运维    operation"></a>Linux运维    <del>operation</del></h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">echo</span> <span class="string">&quot;Linux operation or bash scriptes!&quot;</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="服务器-Server"><a href="#服务器-Server" class="headerlink" title="服务器   Server"></a>服务器   <del>Server</del></h3><figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">$ <span class="attribute">vim</span> /etc/nigix/nginx.conf  <span class="comment"># nginx learing</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>我有霉国服务器 <del>I have a USA cloud server</del></li>
-</ul>
-<h3 id="非计算机-Not-Computer"><a href="#非计算机-Not-Computer" class="headerlink" title="非计算机    Not Computer"></a>非计算机    <del>Not Computer</del></h3><h3 id="有兴趣的话-怎么联系我"><a href="#有兴趣的话-怎么联系我" class="headerlink" title="有兴趣的话,怎么联系我"></a>有兴趣的话,怎么联系我</h3><p><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2dhcDQwNA==">github<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly9iYWlkdS5jb20vcz93ZD0lRTYlODglOTElRTglODIlQUYlRTUlQUUlOUElRTQlQjglOEQlRTUlOTElOEElRTglQUYlODklRTQlQkQlQTA=">telegram<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly95b3V0dWJlLmNvbS8=">youtube<i class="fa fa-external-link-alt"></i></span></p>
-]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>linux</title>
+    <title>Linux 编辑器</title>
     <url>/2026/01/10/hi/</url>
-    <content><![CDATA[<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&quot;Hello,World!&quot;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;First Blog Article!&quot;</span></span><br></pre></td></tr></table></figure>
-
+    <content><![CDATA[<p>待完善</p>
 <span id="more"></span>
 ]]></content>
       <categories>
