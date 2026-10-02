@@ -1356,7 +1356,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #95a8ff;
+    background: #c9b41a;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -3412,4 +3412,27 @@ html[data-theme="dark"] .tag-cloud-tags a.tag-cloud-10:active {
 }
 .brand:hover {
   color: var(--brand-color);
+}
+@media (max-width: 991px) {
+  .sidebar {
+    background: var(--content-bg-color);
+    box-shadow: 0 0 12px rgba(0,0,0,0.25);
+  }
+  .sidebar-inner {
+    color: var(--text-color);
+  }
+  .sidebar a {
+    color: var(--text-color);
+    border-bottom-color: var(--body-bg-color);
+  }
+  .sidebar a:hover {
+    color: var(--link-hover-color);
+    border-bottom-color: var(--link-hover-color);
+  }
+  .sidebar-nav li {
+    color: var(--link-color);
+  }
+  .sidebar-nav li:hover {
+    color: var(--text-color);
+  }
 }
