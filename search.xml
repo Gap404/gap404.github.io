@@ -119,12 +119,16 @@
       </tags>
   </entry>
   <entry>
-    <title></title>
-    <url>/2026/10/08/Dwm/</url>
+    <title>Dwm</title>
+    <url>/2026/02/02/Dwm/</url>
     <content><![CDATA[<p>##Dwm<br>dwm是x11下的动态调节窗口管理器(dwm is a dynamic window manager for X.)<br>###安装(Install)</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">```bash</span><br><span class="line">git clone https://git.suckless.org/dwm    dwm-btw  #克隆仓库到本地,dmw是C下的需要到克隆本地编译</span><br><span class="line">git clone https://git.suckless.org/st  st-btw    #dwm的默认终端</span><br><span class="line">git clone https://git.suckless.org/dmenu  dmenu-btw      #软件的启动器</span><br><span class="line">git clone https://git.suckless.org/dwmblocks  dmwblocks-btw   #dwm的状态栏</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
-]]></content>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://git.suckless.org/dwm    dwm-btw  <span class="comment">#克隆仓库到本地,dmw是C下的需要到克隆本地编译</span></span><br><span class="line">git <span class="built_in">clone</span> https://git.suckless.org/st  st-btw    <span class="comment">#dwm的默认终端</span></span><br><span class="line">git <span class="built_in">clone</span> https://git.suckless.org/dmenu  dmenu-btw      <span class="comment">#软件的启动器</span></span><br><span class="line">git <span class="built_in">clone</span> https://git.suckless.org/dwmblocks  dmwblocks-btw   <span class="comment">#dwm的状态栏</span></span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>计算机</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>#Theme</tag>
+      </tags>
   </entry>
 </search>
