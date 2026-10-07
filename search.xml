@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Dwm</title>
+    <url>/2026/02/02/Dwm/</url>
+    <content><![CDATA[<p>##Dwm<br>dwm是x11下的动态调节窗口管理器(dwm is a dynamic window manager for X.)<br>###安装(Install)</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://git.suckless.org/dwm    dwm-btw  <span class="comment">#克隆仓库到本地,dmw是C下的需要到克隆本地编译</span></span><br><span class="line">git <span class="built_in">clone</span> https://git.suckless.org/st  st-btw    <span class="comment">#dwm的默认终端</span></span><br><span class="line">git <span class="built_in">clone</span> https://git.suckless.org/dmenu  dmenu-btw      <span class="comment">#软件的启动器</span></span><br><span class="line">git <span class="built_in">clone</span> https://git.suckless.org/dwmblocks  dmwblocks-btw   <span class="comment">#dwm的状态栏</span></span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>计算机</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>#Theme</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Nginx_入门</title>
     <url>/2026/01/10/Nginx/</url>
     <content><![CDATA[<p>#nginx #linux </p>
@@ -99,7 +112,7 @@
     <title>欢迎来到我的博客</title>
     <url>/2026/09/29/hello-world/</url>
     <content><![CDATA[<p>欢迎来到我的博客！<del>Welcome to my blog! If you get any problems when using email, you can find the answer in my <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2dhcDQwNA==">GitHub<i class="fa fa-external-link-alt"></i></span></del></p>
-<h2 id="目录-Content"><a href="#目录-Content" class="headerlink" title="目录    Content"></a>目录    <del>Content</del></h2><h3 id="Linux运维-operation"><a href="#Linux运维-operation" class="headerlink" title="Linux运维    operation"></a>Linux运维    <del>operation</del></h3><h3 id="服务器-Server"><a href="#服务器-Server" class="headerlink" title="服务器   Server"></a>服务器   <del>Server</del></h3><h3 id="非计算机-Not-Computer"><a href="#非计算机-Not-Computer" class="headerlink" title="非计算机    Not Computer"></a>非计算机    <del>Not Computer</del></h3><h3 id="有兴趣的话-怎么联系我"><a href="#有兴趣的话-怎么联系我" class="headerlink" title="有兴趣的话,怎么联系我"></a>有兴趣的话,怎么联系我</h3><p>email:<span class="exturl" data-url="bWFpbHRvOiYjeDM4OyYjMTIyOyYjeDZjOyYjeDYxOyYjMTE3OyYjeDZlOyYjMTA2OyYjeDc2OyYjNjQ7JiN4NmU7JiN4NmY7JiN4NzI7JiN4NjE7JiN4NmU7JiMxMTQ7JiMxMTE7JiN4MmU7JiM5NzsmIzExMDsmIzExMTsmIzExMDsmI3g2MTsmI3g2NDsmIzEwMDsmIzEyMTsmI3gyZTsmIzk5OyYjMTExOyYjeDZkOw==">8zlaunjv@noranro.anonaddy.com<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2dhcDQwNA==">github<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly9iYWlkdS5jb20vcz93ZD0lRTYlODglOTElRTglODIlQUYlRTUlQUUlOUElRTQlQjglOEQlRTUlOTElOEElRTglQUYlODklRTQlQkQlQTA=">telegram<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly95b3V0dWJlLmNvbS8=">youtube<i class="fa fa-external-link-alt"></i></span></p>
+<h2 id="目录-Content"><a href="#目录-Content" class="headerlink" title="目录    Content"></a>目录    <del>Content</del></h2><h3 id="Linux运维-operation"><a href="#Linux运维-operation" class="headerlink" title="Linux运维    operation"></a>Linux运维    <del>operation</del></h3><h3 id="服务器-Server"><a href="#服务器-Server" class="headerlink" title="服务器   Server"></a>服务器   <del>Server</del></h3><h3 id="非计算机-Not-Computer"><a href="#非计算机-Not-Computer" class="headerlink" title="非计算机    Not Computer"></a>非计算机    <del>Not Computer</del></h3><h3 id="有兴趣的话-怎么联系我"><a href="#有兴趣的话-怎么联系我" class="headerlink" title="有兴趣的话,怎么联系我"></a>有兴趣的话,怎么联系我</h3><p>email:<span class="exturl" data-url="bWFpbHRvOiYjeDM4OyYjeDdhOyYjeDZjOyYjeDYxOyYjMTE3OyYjeDZlOyYjMTA2OyYjMTE4OyYjNjQ7JiMxMTA7JiN4NmY7JiMxMTQ7JiM5NzsmI3g2ZTsmIzExNDsmI3g2ZjsmIzQ2OyYjeDYxOyYjeDZlOyYjMTExOyYjMTEwOyYjOTc7JiMxMDA7JiMxMDA7JiMxMjE7JiM0NjsmI3g2MzsmIzExMTsmIzEwOTs=">8zlaunjv@noranro.anonaddy.com<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2dhcDQwNA==">github<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly9iYWlkdS5jb20vcz93ZD0lRTYlODglOTElRTglODIlQUYlRTUlQUUlOUElRTQlQjglOEQlRTUlOTElOEElRTglQUYlODklRTQlQkQlQTA=">telegram<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly95b3V0dWJlLmNvbS8=">youtube<i class="fa fa-external-link-alt"></i></span></p>
 ]]></content>
       <categories>
         <category>blog</category>
@@ -116,19 +129,6 @@
       </categories>
       <tags>
         <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Dwm</title>
-    <url>/2026/02/02/Dwm/</url>
-    <content><![CDATA[<p>##Dwm<br>dwm是x11下的动态调节窗口管理器(dwm is a dynamic window manager for X.)<br>###安装(Install)</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://git.suckless.org/dwm    dwm-btw  <span class="comment">#克隆仓库到本地,dmw是C下的需要到克隆本地编译</span></span><br><span class="line">git <span class="built_in">clone</span> https://git.suckless.org/st  st-btw    <span class="comment">#dwm的默认终端</span></span><br><span class="line">git <span class="built_in">clone</span> https://git.suckless.org/dmenu  dmenu-btw      <span class="comment">#软件的启动器</span></span><br><span class="line">git <span class="built_in">clone</span> https://git.suckless.org/dwmblocks  dmwblocks-btw   <span class="comment">#dwm的状态栏</span></span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>计算机</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>#Theme</tag>
       </tags>
   </entry>
 </search>
