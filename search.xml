@@ -4,14 +4,38 @@
     <title>Dwm</title>
     <url>/2026/02/02/Dwm/</url>
     <content><![CDATA[<h2 id="Dwm"><a href="#Dwm" class="headerlink" title="Dwm"></a>Dwm</h2><p>dwm是x11下的动态调节窗口管理器(dwm is a dynamic window manager for X.)</p>
-<h3 id="安装-Install"><a href="#安装-Install" class="headerlink" title="安装(Install)"></a>安装(Install)</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://git.suckless.org/dwm    dwm-btw  <span class="comment">#克隆仓库到本地,dmw是C写的需要到克隆本地编译</span></span><br><span class="line">git <span class="built_in">clone</span> https://git.suckless.org/st  st-btw    <span class="comment">#dwm的默认终端</span></span><br><span class="line">git <span class="built_in">clone</span> https://git.suckless.org/dmenu  dmenu-btw      <span class="comment">#软件的启动器</span></span><br><span class="line">git <span class="built_in">clone</span> https://git.suckless.org/dwmblocks  dmwblocks-btw   <span class="comment">#dwm的状态栏</span></span><br></pre></td></tr></table></figure>
+<h3 id="安装-Install"><a href="#安装-Install" class="headerlink" title="安装(Install)"></a>安装(Install)</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://git.suckless.org/dwm  dwm-btw  <span class="comment">#克隆仓库到本地,dmw是C写的需要到克隆本地编译</span></span><br><span class="line">git <span class="built_in">clone</span> https://git.suckless.org/st  st-btw    <span class="comment">#dwm的默认终端</span></span><br><span class="line">git <span class="built_in">clone</span> https://git.suckless.org/dmenu  dmenu-btw      <span class="comment">#软件的启动器</span></span><br><span class="line">git <span class="built_in">clone</span> https://git.suckless.org/dwmblocks  dmwblocks-btw   <span class="comment">#dwm的状态栏</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> pacman -S base-devel <span class="comment">#安装c语言环境</span></span><br><span class="line"><span class="built_in">sudo</span> pacman -S feh <span class="comment">#设置壁纸,看图工具</span></span><br><span class="line"><span class="built_in">sudo</span> pacman -S git <span class="comment">#管理版本</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="下面可以安装也可以不安装"><a href="#下面可以安装也可以不安装" class="headerlink" title="下面可以安装也可以不安装"></a>下面可以安装也可以不安装</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> pacman -S ttf-jetbrains-mono-nerd (字体)</span><br><span class="line"><span class="built_in">sudo</span> pacman -S xorg-xinit  <span class="comment">#tty启动(有启动器可以不安装)</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h3><h4 id="dwm"><a href="#dwm" class="headerlink" title="dwm"></a>dwm</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> dwm-btw &amp;&amp; <span class="built_in">sudo</span> make clena install</span><br></pre></td></tr></table></figure>
+<h4 id="st"><a href="#st" class="headerlink" title="st"></a>st</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> st-btw &amp;&amp; <span class="built_in">sudo</span> make clena install</span><br></pre></td></tr></table></figure>
+<h4 id="dmenu"><a href="#dmenu" class="headerlink" title="dmenu"></a>dmenu</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> dmenu-btw &amp;&amp; <span class="built_in">sudo</span> make clena install</span><br></pre></td></tr></table></figure>
+<h4 id="dwmblocks"><a href="#dwmblocks" class="headerlink" title="dwmblocks"></a>dwmblocks</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> dwmblock-btw &amp;&amp; <span class="built_in">sudo</span> make clena install</span><br></pre></td></tr></table></figure>
+
+<h4 id="创建-xinitrc"><a href="#创建-xinitrc" class="headerlink" title="创建.xinitrc"></a>创建.xinitrc</h4><figure class="highlight txt"><table><tr><td class="code"><pre><span class="line">cd &amp;&amp;  touch $HOME/.xinitrc</span><br><span class="line">echo &#x27;exec dwm&#x27; &gt; $HOME/.xinitrc</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="进入DWM前准备"><a href="#进入DWM前准备" class="headerlink" title="进入DWM前准备"></a>进入DWM前准备</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> systemctl <span class="built_in">disable</span> -now 启动器</span><br><span class="line">或者</span><br><span class="line">Ctrl + Alt + F3 进入另一个<span class="built_in">tty</span>会话</span><br></pre></td></tr></table></figure>
+<h4 id="进入TTY会话"><a href="#进入TTY会话" class="headerlink" title="进入TTY会话"></a>进入TTY会话</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">startx <span class="comment">#每次都是使用startx来进入dwm</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="进入DWM"><a href="#进入DWM" class="headerlink" title="进入DWM"></a>进入DWM</h3><blockquote>
+<p>[!Note] 如果你发现你的分辨率有点奇怪</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">xrandr <span class="comment">#查看分辨率</span></span><br><span class="line">xranr --output 显示器名称 --mode 分辨率 --rate 屏幕刷新率</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>[!Tips]建议将配置的用户和属组改成用户,修改配置不用一直要sudo</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> <span class="built_in">chown</span> -R 用户:用户 <span class="variable">$HOME</span>/*-btw</span><br></pre></td></tr></table></figure>
+
 ]]></content>
       <categories>
         <category>计算机</category>
       </categories>
       <tags>
         <tag>Linux</tag>
-        <tag>#Theme</tag>
+        <tag>Theme</tag>
       </tags>
   </entry>
   <entry>
@@ -113,7 +137,7 @@
     <title>欢迎来到我的博客</title>
     <url>/2026/10/10/hello-world/</url>
     <content><![CDATA[<p>欢迎来到我的博客！<del>Welcome to my blog! If you get any problems when using email, you can find the answer in my <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2dhcDQwNA==">GitHub<i class="fa fa-external-link-alt"></i></span></del></p>
-<h2 id="目录-Content"><a href="#目录-Content" class="headerlink" title="目录    Content"></a>目录    <del>Content</del></h2><h3 id="Linux运维-operation"><a href="#Linux运维-operation" class="headerlink" title="Linux运维    operation"></a>Linux运维    <del>operation</del></h3><h3 id="服务器-Server"><a href="#服务器-Server" class="headerlink" title="服务器   Server"></a>服务器   <del>Server</del></h3><h3 id="非计算机-Not-Computer"><a href="#非计算机-Not-Computer" class="headerlink" title="非计算机    Not Computer"></a>非计算机    <del>Not Computer</del></h3><h3 id="有兴趣的话-怎么联系我"><a href="#有兴趣的话-怎么联系我" class="headerlink" title="有兴趣的话,怎么联系我"></a>有兴趣的话,怎么联系我</h3><p>email:<span class="exturl" data-url="bWFpbHRvOiYjeDM4OyYjMTIyOyYjeDZjOyYjOTc7JiMxMTc7JiN4NmU7JiMxMDY7JiMxMTg7JiM2NDsmI3g2ZTsmIzExMTsmIzExNDsmIzk3OyYjeDZlOyYjeDcyOyYjMTExOyYjNDY7JiM5NzsmI3g2ZTsmIzExMTsmI3g2ZTsmIzk3OyYjeDY0OyYjeDY0OyYjMTIxOyYjNDY7JiM5OTsmI3g2ZjsmI3g2ZDs=">8zlaunjv@noranro.anonaddy.com<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2dhcDQwNA==">github<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly9iYWlkdS5jb20vcz93ZD0lRTYlODglOTElRTglODIlQUYlRTUlQUUlOUElRTQlQjglOEQlRTUlOTElOEElRTglQUYlODklRTQlQkQlQTA=">telegram<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly95b3V0dWJlLmNvbS8=">youtube<i class="fa fa-external-link-alt"></i></span></p>
+<h2 id="目录-Content"><a href="#目录-Content" class="headerlink" title="目录    Content"></a>目录    <del>Content</del></h2><h3 id="Linux运维-operation"><a href="#Linux运维-operation" class="headerlink" title="Linux运维    operation"></a>Linux运维    <del>operation</del></h3><h3 id="服务器-Server"><a href="#服务器-Server" class="headerlink" title="服务器   Server"></a>服务器   <del>Server</del></h3><h3 id="非计算机-Not-Computer"><a href="#非计算机-Not-Computer" class="headerlink" title="非计算机    Not Computer"></a>非计算机    <del>Not Computer</del></h3><h3 id="有兴趣的话-怎么联系我"><a href="#有兴趣的话-怎么联系我" class="headerlink" title="有兴趣的话,怎么联系我"></a>有兴趣的话,怎么联系我</h3><p>email:<span class="exturl" data-url="bWFpbHRvOiYjNTY7JiMxMjI7JiN4NmM7JiM5NzsmIzExNzsmI3g2ZTsmI3g2YTsmI3g3NjsmIzY0OyYjeDZlOyYjeDZmOyYjMTE0OyYjOTc7JiMxMTA7JiN4NzI7JiN4NmY7JiN4MmU7JiM5NzsmI3g2ZTsmIzExMTsmI3g2ZTsmIzk3OyYjMTAwOyYjeDY0OyYjeDc5OyYjNDY7JiM5OTsmI3g2ZjsmIzEwOTs=">8zlaunjv@noranro.anonaddy.com<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2dhcDQwNA==">github<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly9iYWlkdS5jb20vcz93ZD0lRTYlODglOTElRTglODIlQUYlRTUlQUUlOUElRTQlQjglOEQlRTUlOTElOEElRTglQUYlODklRTQlQkQlQTA=">telegram<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly95b3V0dWJlLmNvbS8=">youtube<i class="fa fa-external-link-alt"></i></span></p>
 ]]></content>
       <categories>
         <category>blog</category>
@@ -131,5 +155,14 @@
       <tags>
         <tag>Linux</tag>
       </tags>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2026/10/10/lazygit/</url>
+    <content><![CDATA[<h2 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure>
+<h2 id="添加"><a href="#添加" class="headerlink" title="添加"></a>添加</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git add -A </span><br></pre></td></tr></table></figure>
+<h2 id="提交"><a href="#提交" class="headerlink" title="提交"></a>提交</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git commit -m <span class="string">&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+<h2 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git tag -a -m v0.1 <span class="string">&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+]]></content>
   </entry>
 </search>
