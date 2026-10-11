@@ -1356,7 +1356,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #0bb3ff;
+    background: #0612f5;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -3425,6 +3425,21 @@ html[data-theme="light"] .tag-cloud-tags a.tag-cloud-10:active {
 }
 .back-to-top {
   background: var(--theme-color);
+  color: #fbf1c7;
+}
+.back-to-top:hover,
+.back-to-top:focus,
+.back-to-top:active {
+  color: var(--body-bg-color);
+}
+[data-theme="dark"] .back-to-top:hover,
+[data-theme="dark"] .back-to-top:focus,
+[data-theme="dark"] .back-to-top:active {
+  color: #1d2021;
+}
+[data-theme="light"] .back-to-top:hover,
+[data-theme="light"] .back-to-top:focus,
+[data-theme="light"] .back-to-top:active {
   color: #fbf1c7;
 }
 @media (max-width: 991px) {
