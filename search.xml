@@ -35,7 +35,7 @@
       </categories>
       <tags>
         <tag>Linux</tag>
-        <tag>Theme</tag>
+        <tag>Conf</tag>
       </tags>
   </entry>
   <entry>
@@ -130,14 +130,14 @@
       </categories>
       <tags>
         <tag>Linux</tag>
-        <tag>文件</tag>
+        <tag>File</tag>
       </tags>
   </entry>
   <entry>
     <title>欢迎来到我的博客</title>
-    <url>/2026/10/10/hello-world/</url>
+    <url>/2026/10/11/hello-world/</url>
     <content><![CDATA[<p>欢迎来到我的博客！<del>Welcome to my blog! If you get any problems when using email, you can find the answer in my <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2dhcDQwNA==">GitHub<i class="fa fa-external-link-alt"></i></span></del></p>
-<h2 id="目录-Content"><a href="#目录-Content" class="headerlink" title="目录    Content"></a>目录    <del>Content</del></h2><h3 id="Linux运维-operation"><a href="#Linux运维-operation" class="headerlink" title="Linux运维    operation"></a>Linux运维    <del>operation</del></h3><h3 id="服务器-Server"><a href="#服务器-Server" class="headerlink" title="服务器   Server"></a>服务器   <del>Server</del></h3><h3 id="非计算机-Not-Computer"><a href="#非计算机-Not-Computer" class="headerlink" title="非计算机    Not Computer"></a>非计算机    <del>Not Computer</del></h3><h3 id="有兴趣的话-怎么联系我"><a href="#有兴趣的话-怎么联系我" class="headerlink" title="有兴趣的话,怎么联系我"></a>有兴趣的话,怎么联系我</h3><p>email:<span class="exturl" data-url="bWFpbHRvOiYjeDM4OyYjeDdhOyYjMTA4OyYjOTc7JiN4NzU7JiMxMTA7JiN4NmE7JiN4NzY7JiM2NDsmIzExMDsmIzExMTsmI3g3MjsmI3g2MTsmI3g2ZTsmIzExNDsmIzExMTsmIzQ2OyYjeDYxOyYjeDZlOyYjeDZmOyYjMTEwOyYjOTc7JiMxMDA7JiMxMDA7JiN4Nzk7JiM0NjsmI3g2MzsmIzExMTsmIzEwOTs=">8zlaunjv@noranro.anonaddy.com<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2dhcDQwNA==">github<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly9iYWlkdS5jb20vcz93ZD0lRTYlODglOTElRTglODIlQUYlRTUlQUUlOUElRTQlQjglOEQlRTUlOTElOEElRTglQUYlODklRTQlQkQlQTA=">telegram<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly95b3V0dWJlLmNvbS8=">youtube<i class="fa fa-external-link-alt"></i></span></p>
+<h2 id="目录-Content"><a href="#目录-Content" class="headerlink" title="目录    Content"></a>目录    <del>Content</del></h2><h3 id="Linux运维-Operation"><a href="#Linux运维-Operation" class="headerlink" title="Linux运维    Operation"></a>Linux运维    <del>Operation</del></h3><h3 id="服务器-Server"><a href="#服务器-Server" class="headerlink" title="服务器   Server"></a>服务器   <del>Server</del></h3><h3 id="非计算机-Not-Computer"><a href="#非计算机-Not-Computer" class="headerlink" title="非计算机    Not Computer"></a>非计算机    <del>Not Computer</del></h3><h3 id="配置-Configuration"><a href="#配置-Configuration" class="headerlink" title="配置   Configuration"></a>配置   <del>Configuration</del></h3><h3 id="有兴趣的话-怎么联系我"><a href="#有兴趣的话-怎么联系我" class="headerlink" title="有兴趣的话,怎么联系我"></a>有兴趣的话,怎么联系我</h3><p>email:<span class="exturl" data-url="bWFpbHRvOiYjNTY7JiMxMjI7JiN4NmM7JiM5NzsmI3g3NTsmI3g2ZTsmIzEwNjsmIzExODsmIzY0OyYjeDZlOyYjeDZmOyYjMTE0OyYjeDYxOyYjeDZlOyYjMTE0OyYjeDZmOyYjeDJlOyYjOTc7JiN4NmU7JiMxMTE7JiN4NmU7JiN4NjE7JiN4NjQ7JiN4NjQ7JiN4Nzk7JiN4MmU7JiN4NjM7JiMxMTE7JiMxMDk7">8zlaunjv@noranro.anonaddy.com<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2dhcDQwNA==">github<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly9iYWlkdS5jb20vcz93ZD0lRTYlODglOTElRTglODIlQUYlRTUlQUUlOUElRTQlQjglOEQlRTUlOTElOEElRTglQUYlODklRTQlQkQlQTA=">telegram<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly95b3V0dWJlLmNvbS8=">youtube<i class="fa fa-external-link-alt"></i></span></p>
 ]]></content>
       <categories>
         <category>blog</category>
@@ -157,12 +157,19 @@
       </tags>
   </entry>
   <entry>
-    <title></title>
-    <url>/2026/10/10/lazygit/</url>
+    <title>lazygit</title>
+    <url>/2026/02/02/lazygit/</url>
     <content><![CDATA[<h2 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure>
 <h2 id="添加"><a href="#添加" class="headerlink" title="添加"></a>添加</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git add -A </span><br></pre></td></tr></table></figure>
 <h2 id="提交"><a href="#提交" class="headerlink" title="提交"></a>提交</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git commit -m <span class="string">&quot;&quot;</span></span><br></pre></td></tr></table></figure>
 <h2 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git tag -a -m v0.1 <span class="string">&quot;&quot;</span></span><br></pre></td></tr></table></figure>
 ]]></content>
+      <categories>
+        <category>计算机</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>Conf</tag>
+      </tags>
   </entry>
 </search>
