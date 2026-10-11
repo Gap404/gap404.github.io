@@ -1356,7 +1356,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #0612f5;
+    background: #ff8;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -1422,7 +1422,7 @@ pre code {
   }
 }
 .sidebar-toggle:hover .toggle-line {
-  background: #9d0006;
+  background: #458588;
 }
 @media (any-hover: hover) {
   body:not(.sidebar-active) .sidebar-toggle:hover :first-child {
@@ -1481,13 +1481,13 @@ pre code {
 }
 .sidebar-toc-active .sidebar-nav-toc,
 .sidebar-overview-active .sidebar-nav-overview {
-  border-bottom-color: #9d0006;
-  color: #9d0006;
+  border-bottom-color: #458588;
+  color: #458588;
   transition-delay: 0.2s;
 }
 .sidebar-toc-active .sidebar-nav-toc:hover,
 .sidebar-overview-active .sidebar-nav-overview:hover {
-  color: #9d0006;
+  color: #458588;
 }
 .sidebar-panel-container {
   align-items: start;
@@ -1593,14 +1593,14 @@ pre code {
   visibility: unset;
 }
 .post-toc .nav .active > a {
-  border-bottom-color: #9d0006;
-  color: #9d0006;
+  border-bottom-color: #458588;
+  color: #458588;
 }
 .post-toc .nav .active-current > a {
-  color: #9d0006;
+  color: #458588;
 }
 .post-toc .nav .active-current > a:hover {
-  color: #9d0006;
+  color: #458588;
 }
 .site-author-image {
   border: 1px solid #eee;
@@ -1816,7 +1816,7 @@ pre code {
   }
 }
 .back-to-top:hover {
-  color: #9d0006;
+  color: #458588;
 }
 .back-to-top.back-to-top-on {
   bottom: 30px;
@@ -2267,17 +2267,17 @@ pre code {
 }
 .reward-container button {
   background: transparent;
-  color: #9d0006;
+  color: #458588;
   cursor: pointer;
   line-height: 2;
   padding: 0 15px;
-  border: 2px solid #9d0006;
+  border: 2px solid #458588;
   border-radius: 2px;
   outline: 0;
   vertical-align: text-top;
 }
 .reward-container button:hover {
-  background: #9d0006;
+  background: #458588;
   color: #fff;
 }
 .post-reward {
@@ -2821,14 +2821,14 @@ header.header {
 }
 .sub-menu .menu-item a:hover {
   background: transparent;
-  color: #9d0006;
+  color: #458588;
 }
 .sub-menu .menu-item-active {
-  border-bottom-color: #9d0006;
-  color: #9d0006;
+  border-bottom-color: #458588;
+  color: #458588;
 }
 .sub-menu .menu-item-active:hover {
-  border-bottom-color: #9d0006;
+  border-bottom-color: #458588;
 }
 @media (min-width: 992px) {
   .sidebar {
@@ -3003,8 +3003,8 @@ html[data-theme="dark"] {
   --brand-color: #fbf1c7;
   --brand-hover-color: #458588;
   --table-row-odd-bg-color: #1d2021;
-  --table-row-hover-bg-color: #928374;
-  --menu-item-bg-color: #928374;
+  --table-row-hover-bg-color: #1d2021;
+  --menu-item-bg-color: #1d2021;
   --theme-color: #458588;
   --btn-default-bg: #458588;
   --btn-default-color: #fbf1c7;
@@ -3037,8 +3037,8 @@ html[data-theme="light"] {
   --brand-color: #1d2021;
   --brand-hover-color: #9d0006;
   --table-row-odd-bg-color: #fbf1c7;
-  --table-row-hover-bg-color: #928374;
-  --menu-item-bg-color: #928374;
+  --table-row-hover-bg-color: #fbf1c7;
+  --menu-item-bg-color: #fbf1c7;
   --theme-color: #9d0006;
   --btn-default-bg: #9d0006;
   --btn-default-color: #fbf1c7;
@@ -3416,6 +3416,32 @@ html[data-theme="light"] .tag-cloud-tags a.tag-cloud-10:active {
 }
 .site-author-image {
   border-color: var(--text-color);
+}
+[data-theme="dark"] .post-toc .nav .active > a,
+[data-theme="dark"] .post-toc .nav .active-current > a,
+[data-theme="dark"] .post-toc .nav .active-current > a:hover {
+  color: #458588;
+  border-bottom-color: #458588;
+}
+[data-theme="light"] .post-toc .nav .active > a,
+[data-theme="light"] .post-toc .nav .active-current > a,
+[data-theme="light"] .post-toc .nav .active-current > a:hover {
+  color: #9d0006;
+  border-bottom-color: #9d0006;
+}
+[data-theme="dark"] .sidebar-toc-active .sidebar-nav-toc,
+[data-theme="dark"] .sidebar-overview-active .sidebar-nav-overview,
+[data-theme="dark"] .sidebar-toc-active .sidebar-nav-toc:hover,
+[data-theme="dark"] .sidebar-overview-active .sidebar-nav-overview:hover {
+  color: #458588;
+  border-bottom-color: #458588;
+}
+[data-theme="light"] .sidebar-toc-active .sidebar-nav-toc,
+[data-theme="light"] .sidebar-overview-active .sidebar-nav-overview,
+[data-theme="light"] .sidebar-toc-active .sidebar-nav-toc:hover,
+[data-theme="light"] .sidebar-overview-active .sidebar-nav-overview:hover {
+  color: #9d0006;
+  border-bottom-color: #9d0006;
 }
 .sidebar-toggle {
   background: var(--theme-color);
