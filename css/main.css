@@ -1356,7 +1356,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #c3ff3b;
+    background: #0bb3ff;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -3416,6 +3416,16 @@ html[data-theme="light"] .tag-cloud-tags a.tag-cloud-10:active {
 }
 .site-author-image {
   border-color: var(--text-color);
+}
+.sidebar-toggle {
+  background: var(--theme-color);
+}
+.sidebar-toggle .toggle-line {
+  background: #fbf1c7;
+}
+.back-to-top {
+  background: var(--theme-color);
+  color: #fbf1c7;
 }
 @media (max-width: 991px) {
   .sidebar {
