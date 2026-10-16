@@ -41,8 +41,7 @@
   <entry>
     <title>Nginx_入门</title>
     <url>/2026/01/10/Nginx/</url>
-    <content><![CDATA[<p>#nginx #linux </p>
-<ul>
+    <content><![CDATA[<ul>
 <li><p>nginx及其模块的工作方式在配置文件中确定。默认情况下，配置文件名为<code>nginx.conf</code>，并放置在目录<code>/usr/local/nginx/conf</code>、<code>/etc/nginx</code>或<code>/usr/local/etc/nginx</code>中</p>
 </li>
 <li><p>in this case a signal is sent directly to a process with a given process ID. The process ID of the nginx master process is written, by default, to the <code>nginx.pid</code> in the directory <code>/usr/local/nginx/logs</code> or <code>/var/run</code>. For example, if the master process ID is 1628, to send the QUIT signal resulting in nginx’s graceful shutdown, execute:</p>
@@ -87,6 +86,7 @@
         <category>计算机</category>
       </categories>
       <tags>
+        <tag>Linux</tag>
         <tag>Server</tag>
       </tags>
   </entry>
@@ -135,9 +135,9 @@
   </entry>
   <entry>
     <title>欢迎来到我的博客</title>
-    <url>/2026/10/15/hello-world/</url>
+    <url>/2026/05/20/hello-world/</url>
     <content><![CDATA[<p>欢迎来到我的博客！<del>Welcome to my blog! If you get any problems when using email, you can find the answer in my <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2dhcDQwNA==">GitHub<i class="fa fa-external-link-alt"></i></span></del></p>
-<h2 id="目录-Content"><a href="#目录-Content" class="headerlink" title="目录    Content"></a>目录    <del>Content</del></h2><h3 id="Linux运维-Operation"><a href="#Linux运维-Operation" class="headerlink" title="Linux运维    Operation"></a>Linux运维    <del>Operation</del></h3><h3 id="服务器-Server"><a href="#服务器-Server" class="headerlink" title="服务器   Server"></a>服务器   <del>Server</del></h3><h3 id="非计算机-Not-Computer"><a href="#非计算机-Not-Computer" class="headerlink" title="非计算机    Not Computer"></a>非计算机    <del>Not Computer</del></h3><h3 id="配置-Configuration"><a href="#配置-Configuration" class="headerlink" title="配置   Configuration"></a>配置   <del>Configuration</del></h3><h3 id="有兴趣的话-怎么联系我"><a href="#有兴趣的话-怎么联系我" class="headerlink" title="有兴趣的话,怎么联系我"></a>有兴趣的话,怎么联系我</h3><p>email:<span class="exturl" data-url="bWFpbHRvOiYjeDM4OyYjeDdhOyYjeDZjOyYjOTc7JiMxMTc7JiMxMTA7JiMxMDY7JiMxMTg7JiN4NDA7JiN4NmU7JiMxMTE7JiMxMTQ7JiM5NzsmIzExMDsmIzExNDsmI3g2ZjsmI3gyZTsmI3g2MTsmIzExMDsmI3g2ZjsmI3g2ZTsmIzk3OyYjMTAwOyYjMTAwOyYjMTIxOyYjeDJlOyYjOTk7JiN4NmY7JiN4NmQ7">8zlaunjv@noranro.anonaddy.com<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2dhcDQwNA==">github<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly9iYWlkdS5jb20vcz93ZD0lRTYlODglOTElRTglODIlQUYlRTUlQUUlOUElRTQlQjglOEQlRTUlOTElOEElRTglQUYlODklRTQlQkQlQTA=">telegram<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly95b3V0dWJlLmNvbS8=">youtube<i class="fa fa-external-link-alt"></i></span></p>
+<h2 id="目录-Content"><a href="#目录-Content" class="headerlink" title="目录    Content"></a>目录    <del>Content</del></h2><h3 id="Linux运维-Operation"><a href="#Linux运维-Operation" class="headerlink" title="Linux运维    Operation"></a>Linux运维    <del>Operation</del></h3><h3 id="服务器-Server"><a href="#服务器-Server" class="headerlink" title="服务器   Server"></a>服务器   <del>Server</del></h3><h3 id="非计算机-Not-Computer"><a href="#非计算机-Not-Computer" class="headerlink" title="非计算机    Not Computer"></a>非计算机    <del>Not Computer</del></h3><h3 id="配置-Configuration"><a href="#配置-Configuration" class="headerlink" title="配置   Configuration"></a>配置   <del>Configuration</del></h3><h3 id="有兴趣的话-怎么联系我"><a href="#有兴趣的话-怎么联系我" class="headerlink" title="有兴趣的话,怎么联系我"></a>有兴趣的话,怎么联系我</h3><p>email:<span class="exturl" data-url="bWFpbHRvOiYjNTY7JiMxMjI7JiMxMDg7JiM5NzsmIzExNzsmI3g2ZTsmIzEwNjsmI3g3NjsmIzY0OyYjeDZlOyYjeDZmOyYjMTE0OyYjOTc7JiN4NmU7JiMxMTQ7JiMxMTE7JiN4MmU7JiN4NjE7JiMxMTA7JiN4NmY7JiN4NmU7JiN4NjE7JiN4NjQ7JiN4NjQ7JiMxMjE7JiN4MmU7JiN4NjM7JiN4NmY7JiMxMDk7">8zlaunjv@noranro.anonaddy.com<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2dhcDQwNA==">github<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly9iYWlkdS5jb20vcz93ZD0lRTYlODglOTElRTglODIlQUYlRTUlQUUlOUElRTQlQjglOEQlRTUlOTElOEElRTglQUYlODklRTQlQkQlQTA=">telegram<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly95b3V0dWJlLmNvbS8=">youtube<i class="fa fa-external-link-alt"></i></span></p>
 ]]></content>
       <categories>
         <category>blog</category>
@@ -154,6 +154,7 @@
       </categories>
       <tags>
         <tag>Linux</tag>
+        <tag>Conf</tag>
       </tags>
   </entry>
   <entry>
