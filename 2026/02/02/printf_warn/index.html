@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#8839ef" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#cba6f7" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 8.1.2">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/image/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/image/pxArt_8.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/image/pxArt_8.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#8839ef">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha256-4Lad8m4ZWW1Lgb9+sMVLYEfnIh7BjV1NQMEe79Pviks=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"www.etcnotes.top","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.29.0","exturl":true,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"atom-one-light","dark":"atom-one-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":true,"style":"flat"},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="Shell 脚本中 printf 四舍五入与浮点数精度避坑指南">
+<meta property="og:type" content="article">
+<meta property="og:title" content="printf_mistake">
+<meta property="og:url" content="https://www.etcnotes.top/2026/02/02/printf_warn/index.html">
+<meta property="og:site_name" content="Calm博客">
+<meta property="og:description" content="Shell 脚本中 printf 四舍五入与浮点数精度避坑指南">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-02-01T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-10-22T17:23:42.611Z">
+<meta property="article:author" content="Calm">
+<meta property="article:tag" content="Linux">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://www.etcnotes.top/2026/02/02/printf_warn/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://www.etcnotes.top/2026/02/02/printf_warn/","path":"2026/02/02/printf_warn/","title":"printf_mistake"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>printf_mistake | Calm博客</title>
+  
+
+
+
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/medium-zoom/1.1.0/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/local-search.js" defer></script>
+
+
+
+
+
+
+
+  
+
+
+
+
+<script>
+  (function () {
+    try {
+      var stored = localStorage.getItem('scheme');
+      var theme = stored || 'dark';
+      document.documentElement.setAttribute('data-theme', theme);
+    } catch (e) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
+  })();
+</script><link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/jetbrains-mono@5.0.0/400.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/jetbrains-mono@5.0.0/700.css">
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-search popup-trigger" aria-label="搜索" role="button">
+      <i class="fa fa-search fa-fw fa-lg"></i>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Calm博客</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-toggle" aria-label="切换导航栏" role="button">
+      <i class="fa fa-ellipsis fa-fw fa-lg"></i>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-layer-group fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  
+  <template id="search-popup-template"><div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="搜索..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div></template>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Calm"
+      src="/image/pxArt_8.png">
+  <p class="site-author-name" itemprop="name">Calm</p>
+  <div class="site-description" itemprop="description">立志成为Linux大牛</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">14</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL0dhcDQwNA==" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Gap404"><i class="fab fa-github fa-fw"></i>GitHub</span>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.etcnotes.top/2026/02/02/printf_warn/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/image/pxArt_8.png">
+      <meta itemprop="name" content="Calm">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Calm博客">
+      <meta itemprop="description" content="立志成为Linux大牛">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="printf_mistake | Calm博客">
+      <meta itemprop="description" content="Shell 脚本中 printf 四舍五入与浮点数精度避坑指南">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          printf_mistake
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2026-02-02 00:00:00" itemprop="dateCreated datePublished" datetime="2026-02-02T00:00:00+08:00">2026-02-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2026-10-23 01:23:42" itemprop="dateModified" datetime="2026-10-23T01:23:42+08:00">2026-10-23</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/" itemprop="url" rel="index"><span itemprop="name">计算机</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+            <div class="post-description">Shell 脚本中 printf 四舍五入与浮点数精度避坑指南</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><hr>
+<p>Shell 脚本中 printf 四舍五入与浮点数精度避坑指南</p>
+<p> 核心现象（灵异事件）</p>
+<p>在 Shell 中处理小数时，发现同样的表达式和 scale 值，在终端直接执行和在脚本中执行，printf 得出的四舍五入结果竟然不一样：</p>
+<p>· 终端直接运行：17.928<br>· 脚本变量展开运行：17.929</p>
+<hr>
+<p> 根本原因剖析</p>
+<p>产生这种差异的原因，是由计算工具机制、计算机底层精度和四舍五入规则共同导致的。</p>
+<ol>
+<li>bc 计算器的特性：无情截断</li>
+</ol>
+<p>bc 计算器在设定 scale（精度）后，对于超出的位数是直接截断（丢弃）的，绝不四舍五入。</p>
+<p>· 算式真实结果：17.9285714…<br>· scale&#x3D;4 时：bc 算出 17.9285。</p>
+<ol start="2">
+<li>计算机底层的浮点数精度丢失 (IEEE 754)</li>
+</ol>
+<p>十进制的小数 17.9285 转成二进制是无限循环的，计算机内存无法精确存储，只能存一个近似值。</p>
+<p>· 由于终端执行和脚本执行的上下文（环境变量、管道传输等）不同，导致存入内存的近似值产生了极其微小的偏差。<br>· 有时候存成：17.928499999999999（略微偏小）<br>· 有时候存成：17.928500000000001（略微偏大）</p>
+<ol start="3">
+<li>printf 的底层比较逻辑</li>
+</ol>
+<p>当 printf 执行 %.3f 时，它不是靠“看”数字来舍入的，而是通过比较大小：</p>
+<p>· 如果内存里是 …4999，它小于正中间值 …5，所以向下舍去，输出 17.928。<br>· 如果内存里是 …5001，它大于正中间值 …5，所以向上进位，输出 17.929。</p>
+<hr>
+<p> 关于“银行家舍入法”的澄清</p>
+<p>C语言底层的 printf 默认采用银行家舍入法（四舍六入五成双）。</p>
+<p>· 理论规则：遇到恰好等于 5 且后面没有数字时，看前一位，前一位是偶数就舍，奇数就入。<br>· 现实打脸：由于前面提到的二进制精度丢失，内存中几乎不可能出现“绝对精确的 17.9285”。它要么偏大一点，要么偏小一点。因此，在这个场景下，根本触发不到银行家算法，直接就被普通的“比大小”规则决定了生死。</p>
+<p>只有当数字在二进制里能被精确表示时（如 2.5，3.5），银行家算法才会真正生效。</p>
+<hr>
+<p>️ 最佳实践（避坑法则）</p>
+<p>永远不要让程序去处理恰好卡在边界上（刚好是5）的浮点数。解决方法是：计算时多留几位，显示时再截断。</p>
+<p> 黄金写法模板</p>
+<p>让 bc 的 scale 比你需要保留的位数多 2~3 位，把四舍五入的决定权完全、安全地交给 printf。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 假设你想保留 3 位小数</span></span><br><span class="line"><span class="comment"># 将 bc 的 scale 设置为 5 或更大，避开精度边界</span></span><br><span class="line"><span class="built_in">printf</span> <span class="string">&quot;%.3f\n&quot;</span> $(<span class="built_in">echo</span> <span class="string">&quot;scale=5; 你的复杂算式&quot;</span> | bc)</span><br></pre></td></tr></table></figure>
+
+<p>原理解释：</p>
+<p>当 bc 给出 17.92857 时，printf 看到第 4 位是 5，且后面还有 7（代表绝对大于 5）。此时，无论内存怎么发生微小的精度误差，都不会影响最终进位的结果，从而彻底消除了终端和脚本执行结果不一致的“灵异现象”。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Linux/" rel="tag"># Linux</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2026/01/10/hi/" rel="prev" title="Linux 编辑器">
+                  <i class="fa fa-angle-left"></i> Linux 编辑器
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2026/02/02/printf/" rel="next" title="echo and printf">
+                  echo and printf <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2026</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">拙劣的替代品</span>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+<div class="scheme-toggle" role="button" aria-label="Toggle dark mode" title="切换明暗模式">
+  <i class="fa fa-moon"></i>
+</div>
+<script>
+  (function () {
+    var root = document.documentElement;
+
+    function apply(theme) {
+      root.setAttribute('data-theme', theme);
+      try { localStorage.setItem('scheme', theme); } catch (e) {}
+      var icon = document.querySelector('.scheme-toggle i');
+      if (icon) {
+        icon.className = theme === 'dark' ? 'fa fa-moon' : 'fa fa-sun';
+      }
+    }
+
+    function toggle() {
+      apply(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+    }
+
+    // 给按钮绑定事件（每个按钮只绑一次）
+    function bind() {
+      var btn = document.querySelector('.scheme-toggle');
+      if (!btn || btn.dataset.bound === '1') return;
+      btn.dataset.bound = '1';
+      btn.addEventListener('click', toggle);
+    }
+
+    // 初始化
+    function init() {
+      bind();
+      apply(root.getAttribute('data-theme') || 'dark');
+    }
+
+    init();
+
+    // Pjax 页面切换后按钮可能重建，重新绑定
+    document.addEventListener('page:loaded', init);
+  })();
+</script>
+
+</body>
+</html>

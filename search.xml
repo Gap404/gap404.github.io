@@ -1,6 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>2025-2026复盘</title>
+    <url>/2026/09/05/2025-2026%E5%A4%8D%E7%9B%98/</url>
+    <content><![CDATA[<h3 id="Installing-System"><a href="#Installing-System" class="headerlink" title="Installing System"></a>Installing System</h3><h4 id="…"><a href="#…" class="headerlink" title="…"></a>…</h4><h3 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h3><h4 id="what"><a href="#what" class="headerlink" title="what"></a>what</h4><h4 id="why"><a href="#why" class="headerlink" title="why"></a>why</h4><h4 id="my-opinion"><a href="#my-opinion" class="headerlink" title="my opinion"></a>my opinion</h4><h4 id="Installing"><a href="#Installing" class="headerlink" title="Installing"></a>Installing</h4><h3 id="basic"><a href="#basic" class="headerlink" title="basic"></a>basic</h3><h4 id="Files-Structure"><a href="#Files-Structure" class="headerlink" title="Files Structure"></a>Files Structure</h4><h4 id="…-1"><a href="#…-1" class="headerlink" title="…."></a>….</h4><h3 id="Command"><a href="#Command" class="headerlink" title="Command"></a>Command</h3><h4 id="File-Operations"><a href="#File-Operations" class="headerlink" title="File Operations"></a>File Operations</h4><h4 id="System-Operations"><a href="#System-Operations" class="headerlink" title="System Operations"></a>System Operations</h4><h4 id="Network-Operations"><a href="#Network-Operations" class="headerlink" title="Network Operations"></a>Network Operations</h4><h4 id="Text-Operations"><a href="#Text-Operations" class="headerlink" title="Text Operations"></a>Text Operations</h4><h3 id="Script"><a href="#Script" class="headerlink" title="Script"></a>Script</h3><h4 id="Bash-Scripts"><a href="#Bash-Scripts" class="headerlink" title="Bash Scripts"></a>Bash Scripts</h4><h3 id="Editor"><a href="#Editor" class="headerlink" title="Editor"></a>Editor</h3><h4 id="Vim-Nvim"><a href="#Vim-Nvim" class="headerlink" title="Vim,Nvim"></a>Vim,Nvim</h4><h3 id="Windows-Mannger"><a href="#Windows-Mannger" class="headerlink" title="Windows Mannger"></a>Windows Mannger</h3><h4 id="I3"><a href="#I3" class="headerlink" title="I3"></a>I3</h4><h4 id="dwm"><a href="#dwm" class="headerlink" title="dwm"></a>dwm</h4><h4 id="Hypland"><a href="#Hypland" class="headerlink" title="Hypland"></a>Hypland</h4>]]></content>
+      <categories>
+        <category>计算机</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Dwm</title>
+    <url>/2026/02/02/Dwm/</url>
+    <content><![CDATA[<blockquote>
+<p>[2026-9-28] 我已经转移至vxwm,实在不想配置可以在github上找vxwm的配置用(开箱即用的)<br>我用的是vxwm基于dwm衍生，完全就是照着dwm配置文件格式写的</p>
+</blockquote>
+<h2 id="Dwm"><a href="#Dwm" class="headerlink" title="Dwm"></a>Dwm</h2><p>dwm是x11下的动态调节窗口管理器(dwm is a dynamic window manager for X.)</p>
+<h3 id="安装-Install"><a href="#安装-Install" class="headerlink" title="安装(Install)"></a>安装(Install)</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://git.suckless.org/dwm  dwm-btw  <span class="comment">#克隆仓库到本地,dmw是C写的需要到克隆本地编译</span></span><br><span class="line">git <span class="built_in">clone</span> https://git.suckless.org/st  st-btw    <span class="comment">#dwm的默认终端</span></span><br><span class="line">git <span class="built_in">clone</span> https://git.suckless.org/dmenu  dmenu-btw      <span class="comment">#软件的启动器</span></span><br><span class="line">git <span class="built_in">clone</span> https://git.suckless.org/dwmblocks  dmwblocks-btw   <span class="comment">#dwm的状态栏</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> pacman -S base-devel <span class="comment">#安装c语言环境</span></span><br><span class="line"><span class="built_in">sudo</span> pacman -S feh <span class="comment">#设置壁纸,看图工具</span></span><br><span class="line"><span class="built_in">sudo</span> pacman -S git <span class="comment">#管理版本</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="下面可以安装也可以不安装"><a href="#下面可以安装也可以不安装" class="headerlink" title="下面可以安装也可以不安装"></a>下面可以安装也可以不安装</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> pacman -S ttf-jetbrains-mono-nerd (字体)</span><br><span class="line"><span class="built_in">sudo</span> pacman -S xorg-xinit  <span class="comment">#tty启动(有启动器可以不安装)</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h3><h4 id="dwm"><a href="#dwm" class="headerlink" title="dwm"></a>dwm</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> dwm-btw &amp;&amp; <span class="built_in">sudo</span> make clena install</span><br></pre></td></tr></table></figure>
+<h4 id="st"><a href="#st" class="headerlink" title="st"></a>st</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> st-btw &amp;&amp; <span class="built_in">sudo</span> make clena install</span><br></pre></td></tr></table></figure>
+<h4 id="dmenu"><a href="#dmenu" class="headerlink" title="dmenu"></a>dmenu</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> dmenu-btw &amp;&amp; <span class="built_in">sudo</span> make clena install</span><br></pre></td></tr></table></figure>
+<h4 id="dwmblocks"><a href="#dwmblocks" class="headerlink" title="dwmblocks"></a>dwmblocks</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> dwmblock-btw &amp;&amp; <span class="built_in">sudo</span> make clena install</span><br></pre></td></tr></table></figure>
+
+<h4 id="创建-xinitrc"><a href="#创建-xinitrc" class="headerlink" title="创建.xinitrc"></a>创建.xinitrc</h4><figure class="highlight txt"><table><tr><td class="code"><pre><span class="line">cd &amp;&amp;  touch $HOME/.xinitrc</span><br><span class="line">echo &#x27;exec dwm&#x27; &gt; $HOME/.xinitrc</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="进入DWM前准备"><a href="#进入DWM前准备" class="headerlink" title="进入DWM前准备"></a>进入DWM前准备</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> systemctl <span class="built_in">disable</span> -now 启动器</span><br><span class="line">或者</span><br><span class="line">Ctrl + Alt + F3 进入另一个<span class="built_in">tty</span>会话</span><br></pre></td></tr></table></figure>
+<h6 id="这是xinitrc的配置"><a href="#这是xinitrc的配置" class="headerlink" title="这是xinitrc的配置"></a>这是xinitrc的配置</h6><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vim <span class="variable">$HOME</span>/.xinitrc</span><br></pre></td></tr></table></figure>
+<h6 id="复制下面的配置就行-复制完按-wq退出"><a href="#复制下面的配置就行-复制完按-wq退出" class="headerlink" title="复制下面的配置就行,复制完按:wq退出"></a>复制下面的配置就行,复制完按:wq退出</h6><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#!/bin/sh</span><br><span class="line"># --- 输入法环境变量（必须在启动任何 X 客户端之前设置）---</span><br><span class="line">export QT_IM_MODULE=fcitx</span><br><span class="line">export GTK_IM_MODULE=fcitx</span><br><span class="line">export XMODIFIERS=@im=fcitx</span><br><span class="line"># kitty 基于 GLFW，不读 GTK/QT_IM_MODULE，只认 GLFW_IM_MODULE。</span><br><span class="line"># 设为 ibus：GLFW 走 IBus 协议，而 fcitx5 自带 IBus 兼容层，最终仍由 fcitx5 处理。</span><br><span class="line">export GLFW_IM_MODULE=ibus</span><br><span class="line"></span><br><span class="line"># --- 会话由 dbus-run-session 承载（见文件末尾 exec）---</span><br><span class="line"># 说明：本机从 tty 用 startx 启动，没有 systemd --user 实例，</span><br><span class="line"># 导致 /run/user/1000/bus 是个没有守护进程的死 socket。</span><br><span class="line"># 因此这里不用它，改由 dbus-run-session 建立全新的私有会话总线，</span><br><span class="line"># 并把 dwm（连同浏览器等所有子进程）都放进同一总线，fcitx5 才能被找到。</span><br><span class="line">unset DBUS_SESSION_BUS_ADDRESS</span><br><span class="line"></span><br><span class="line"># --- 鼠标主题（Bibata-Modern 圆润风格；可换 Amber / Ice）---</span><br><span class="line">xset r rate 300 50</span><br><span class="line">export XCURSOR_THEME=Bibata-Modern-Classic</span><br><span class="line">export XCURSOR_SIZE=24</span><br><span class="line">echo &quot;Xcursor.theme: Bibata-Modern-Classic&quot; | xrdb -merge</span><br><span class="line">echo &quot;Xcursor.size: 24&quot; | xrdb -merge</span><br><span class="line">wal -i /home/arch/Image/Pictures/walls_catppuccin/cabin-3.png</span><br><span class="line">feh --bg-fill /home/arch/Image/Pictures/walls_catppuccin/cabin-3.png</span><br><span class="line"># 键盘映射（CapsLock-&gt;Escape 等）统一由 /etc/X11/xorg.conf.d/00-keyboard.conf</span><br><span class="line"># 经 localectl 管理，对所有键盘（含外接）生效，这里不再用 setxkbmap 覆盖。</span><br><span class="line"># --- 其他 ---</span><br><span class="line">#picom &amp;</span><br><span class="line">#(</span><br><span class="line">#  sleep 3</span><br><span class="line">#  exec dwmblocks</span><br><span class="line">#) &amp;</span><br><span class="line"></span><br><span class="line"># --- 启动完整会话 ---</span><br><span class="line"># dbus-run-session 会创建新总线 -&gt; 在其中启动 fcitx5 -&gt; 再 exec dwm</span><br><span class="line">#exec dbus-run-session -- sh -c &#x27;</span><br><span class="line">#    fcitx5 -d &amp;</span><br><span class="line">#    vxwm-status &amp;</span><br><span class="line">    exec vxwm </span><br><span class="line">&#x27;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>[提醒:] 对所有xinitrc文件所有的配置要在<strong>exec dmw</strong>才会生效</p>
+</blockquote>
+<h4 id="进入TTY会话-然后startx"><a href="#进入TTY会话-然后startx" class="headerlink" title="进入TTY会话,然后startx"></a>进入TTY会话,然后startx</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">startx <span class="comment">#每次都是使用startx来进入dwm</span></span><br></pre></td></tr></table></figure>
+<h3 id="进入DWM"><a href="#进入DWM" class="headerlink" title="进入DWM"></a>进入DWM</h3><blockquote>
+<p>[!Note] 如果你发现你的分辨率有点奇怪</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">xrandr <span class="comment">#查看分辨率</span></span><br><span class="line">xranr --output 显示器名称 --mode 分辨率 --rate 屏幕刷新率</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>[!Tips]建议将配置的用户和属组改成用户,修改配置不用一直要sudo</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> <span class="built_in">chown</span> -R 用户:用户 <span class="variable">$HOME</span>/*-btw</span><br></pre></td></tr></table></figure>
+<h2 id="dwm安装到这里就结束了"><a href="#dwm安装到这里就结束了" class="headerlink" title="dwm安装到这里就结束了"></a>dwm安装到这里就结束了</h2><ul>
+<li>想要修改你的dwm配置就dwm-btw&#x2F;下的config.def.h(我推荐修改默认的配置文件)在我的博客也有我的配置文化</li>
+</ul>
+]]></content>
+      <categories>
+        <category>计算机</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>Conf</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Nginx_入门</title>
     <url>/2026/01/10/Nginx/</url>
     <content><![CDATA[<ul>
@@ -48,46 +106,36 @@
         <category>计算机</category>
       </categories>
       <tags>
-        <tag>Server</tag>
         <tag>Linux</tag>
+        <tag>Server</tag>
       </tags>
   </entry>
   <entry>
-    <title>Dwm</title>
-    <url>/2026/02/02/Dwm/</url>
-    <content><![CDATA[<h2 id="Dwm"><a href="#Dwm" class="headerlink" title="Dwm"></a>Dwm</h2><p>dwm是x11下的动态调节窗口管理器(dwm is a dynamic window manager for X.)</p>
-<h3 id="安装-Install"><a href="#安装-Install" class="headerlink" title="安装(Install)"></a>安装(Install)</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://git.suckless.org/dwm  dwm-btw  <span class="comment">#克隆仓库到本地,dmw是C写的需要到克隆本地编译</span></span><br><span class="line">git <span class="built_in">clone</span> https://git.suckless.org/st  st-btw    <span class="comment">#dwm的默认终端</span></span><br><span class="line">git <span class="built_in">clone</span> https://git.suckless.org/dmenu  dmenu-btw      <span class="comment">#软件的启动器</span></span><br><span class="line">git <span class="built_in">clone</span> https://git.suckless.org/dwmblocks  dmwblocks-btw   <span class="comment">#dwm的状态栏</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> pacman -S base-devel <span class="comment">#安装c语言环境</span></span><br><span class="line"><span class="built_in">sudo</span> pacman -S feh <span class="comment">#设置壁纸,看图工具</span></span><br><span class="line"><span class="built_in">sudo</span> pacman -S git <span class="comment">#管理版本</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="下面可以安装也可以不安装"><a href="#下面可以安装也可以不安装" class="headerlink" title="下面可以安装也可以不安装"></a>下面可以安装也可以不安装</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> pacman -S ttf-jetbrains-mono-nerd (字体)</span><br><span class="line"><span class="built_in">sudo</span> pacman -S xorg-xinit  <span class="comment">#tty启动(有启动器可以不安装)</span></span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h3><h4 id="dwm"><a href="#dwm" class="headerlink" title="dwm"></a>dwm</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> dwm-btw &amp;&amp; <span class="built_in">sudo</span> make clena install</span><br></pre></td></tr></table></figure>
-<h4 id="st"><a href="#st" class="headerlink" title="st"></a>st</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> st-btw &amp;&amp; <span class="built_in">sudo</span> make clena install</span><br></pre></td></tr></table></figure>
-<h4 id="dmenu"><a href="#dmenu" class="headerlink" title="dmenu"></a>dmenu</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> dmenu-btw &amp;&amp; <span class="built_in">sudo</span> make clena install</span><br></pre></td></tr></table></figure>
-<h4 id="dwmblocks"><a href="#dwmblocks" class="headerlink" title="dwmblocks"></a>dwmblocks</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> dwmblock-btw &amp;&amp; <span class="built_in">sudo</span> make clena install</span><br></pre></td></tr></table></figure>
-
-<h4 id="创建-xinitrc"><a href="#创建-xinitrc" class="headerlink" title="创建.xinitrc"></a>创建.xinitrc</h4><figure class="highlight txt"><table><tr><td class="code"><pre><span class="line">cd &amp;&amp;  touch $HOME/.xinitrc</span><br><span class="line">echo &#x27;exec dwm&#x27; &gt; $HOME/.xinitrc</span><br></pre></td></tr></table></figure>
-<hr>
-<h3 id="进入DWM前准备"><a href="#进入DWM前准备" class="headerlink" title="进入DWM前准备"></a>进入DWM前准备</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> systemctl <span class="built_in">disable</span> -now 启动器</span><br><span class="line">或者</span><br><span class="line">Ctrl + Alt + F3 进入另一个<span class="built_in">tty</span>会话</span><br></pre></td></tr></table></figure>
-<h4 id="进入TTY会话"><a href="#进入TTY会话" class="headerlink" title="进入TTY会话"></a>进入TTY会话</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">startx <span class="comment">#每次都是使用startx来进入dwm</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="进入DWM"><a href="#进入DWM" class="headerlink" title="进入DWM"></a>进入DWM</h3><blockquote>
-<p>[!Note] 如果你发现你的分辨率有点奇怪</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">xrandr <span class="comment">#查看分辨率</span></span><br><span class="line">xranr --output 显示器名称 --mode 分辨率 --rate 屏幕刷新率</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>[!Tips]建议将配置的用户和属组改成用户,修改配置不用一直要sudo</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> <span class="built_in">chown</span> -R 用户:用户 <span class="variable">$HOME</span>/*-btw</span><br></pre></td></tr></table></figure>
-
+    <title>random</title>
+    <url>/2026/02/02/Random_num/</url>
+    <content><![CDATA[<h3 id="生成随机数"><a href="#生成随机数" class="headerlink" title="生成随机数"></a>生成随机数</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 第一种</span></span><br><span class="line"><span class="built_in">cat</span> /proc/sys/kernel/random/uuid</span><br><span class="line"></span><br><span class="line"><span class="comment"># 第二种</span></span><br><span class="line"><span class="built_in">cat</span> /dev/urandom|<span class="built_in">head</span> -c 8|<span class="built_in">base64</span>|<span class="built_in">tr</span> -d <span class="string">&#x27;=&#x27;</span></span><br><span class="line"><span class="comment"># head取八个字节(byte),tr -c completion(补集) -d delete</span></span><br><span class="line">		</span><br><span class="line"><span class="comment"># 第三种（不推荐）可以通过墒算出 </span></span><br><span class="line"><span class="built_in">cat</span> /dev/random|<span class="built_in">head</span> -c 8|<span class="built_in">base64</span>|<span class="built_in">tr</span> -d <span class="string">&#x27;=&#x27;</span></span><br></pre></td></tr></table></figure>
+<p> 来源:<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2JyZWdtYW4tYXJpZS9kZXZvcHMtZXhlcmNpc2VzL2Jsb2IvbWFzdGVyL3RvcGljcy9saW51eC9SRUFETUUubWQjYmFzaWNz">Linux_basic<i class="fa fa-external-link-alt"></i></span></p>
 ]]></content>
       <categories>
         <category>计算机</category>
       </categories>
       <tags>
         <tag>Linux</tag>
-        <tag>Conf</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>网络</title>
+    <url>/2026/02/02/curl/</url>
+    <content><![CDATA[<ul>
+<li>下载和获取网页和上传</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl URL   <span class="comment">#有GET请求获取网页的HTML</span></span><br><span class="line">-i  <span class="comment">#include responde head  显示响应头</span></span><br><span class="line">-I  <span class="comment">#使用HEAD请求</span></span><br><span class="line">-o  <span class="comment">#下载文件 </span></span><br><span class="line">-s  <span class="comment">#silent不显示</span></span><br><span class="line">-L <span class="comment">#跟随重定向，一般是3xx状态吗中使用</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>计算机</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
@@ -135,9 +183,9 @@
   </entry>
   <entry>
     <title>欢迎来到我的博客</title>
-    <url>/2026/05/20/hello-world/</url>
+    <url>/2026/10/15/hello-world/</url>
     <content><![CDATA[<p>欢迎来到我的博客！<del>Welcome to my blog! If you get any problems when using email, you can find the answer in my <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2dhcDQwNA==">GitHub<i class="fa fa-external-link-alt"></i></span></del></p>
-<h2 id="目录-Content"><a href="#目录-Content" class="headerlink" title="目录    Content"></a>目录    <del>Content</del></h2><h3 id="Linux运维-Operation"><a href="#Linux运维-Operation" class="headerlink" title="Linux运维    Operation"></a>Linux运维    <del>Operation</del></h3><h3 id="服务器-Server"><a href="#服务器-Server" class="headerlink" title="服务器   Server"></a>服务器   <del>Server</del></h3><h3 id="非计算机-Not-Computer"><a href="#非计算机-Not-Computer" class="headerlink" title="非计算机    Not Computer"></a>非计算机    <del>Not Computer</del></h3><h3 id="配置-Configuration"><a href="#配置-Configuration" class="headerlink" title="配置   Configuration"></a>配置   <del>Configuration</del></h3><h3 id="有兴趣的话-怎么联系我"><a href="#有兴趣的话-怎么联系我" class="headerlink" title="有兴趣的话,怎么联系我"></a>有兴趣的话,怎么联系我</h3><p>email:<span class="exturl" data-url="bWFpbHRvOiYjNTY7JiMxMjI7JiMxMDg7JiM5NzsmIzExNzsmI3g2ZTsmIzEwNjsmI3g3NjsmIzY0OyYjMTEwOyYjeDZmOyYjeDcyOyYjOTc7JiN4NmU7JiMxMTQ7JiMxMTE7JiN4MmU7JiM5NzsmI3g2ZTsmIzExMTsmI3g2ZTsmI3g2MTsmIzEwMDsmIzEwMDsmIzEyMTsmIzQ2OyYjOTk7JiN4NmY7JiMxMDk7">8zlaunjv@noranro.anonaddy.com<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2dhcDQwNA==">github<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly9iYWlkdS5jb20vcz93ZD0lRTYlODglOTElRTglODIlQUYlRTUlQUUlOUElRTQlQjglOEQlRTUlOTElOEElRTglQUYlODklRTQlQkQlQTA=">telegram<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly95b3V0dWJlLmNvbS8=">youtube<i class="fa fa-external-link-alt"></i></span></p>
+<h2 id="目录-Content"><a href="#目录-Content" class="headerlink" title="目录    Content"></a>目录    <del>Content</del></h2><h3 id="Linux运维-Operation"><a href="#Linux运维-Operation" class="headerlink" title="Linux运维    Operation"></a>Linux运维    <del>Operation</del></h3><h3 id="服务器-Server"><a href="#服务器-Server" class="headerlink" title="服务器   Server"></a>服务器   <del>Server</del></h3><h3 id="非计算机-Not-Computer"><a href="#非计算机-Not-Computer" class="headerlink" title="非计算机    Not Computer"></a>非计算机    <del>Not Computer</del></h3><h3 id="配置-Configuration"><a href="#配置-Configuration" class="headerlink" title="配置   Configuration"></a>配置   <del>Configuration</del></h3><h3 id="有兴趣的话-怎么联系我"><a href="#有兴趣的话-怎么联系我" class="headerlink" title="有兴趣的话,怎么联系我"></a>有兴趣的话,怎么联系我</h3><p>email:<span class="exturl" data-url="bWFpbHRvOiYjeDM4OyYjeDdhOyYjeDZjOyYjOTc7JiMxMTc7JiMxMTA7JiN4NmE7JiMxMTg7JiN4NDA7JiN4NmU7JiN4NmY7JiMxMTQ7JiM5NzsmIzExMDsmI3g3MjsmIzExMTsmIzQ2OyYjeDYxOyYjeDZlOyYjeDZmOyYjMTEwOyYjeDYxOyYjMTAwOyYjMTAwOyYjeDc5OyYjNDY7JiN4NjM7JiN4NmY7JiN4NmQ7">8zlaunjv@noranro.anonaddy.com<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2dhcDQwNA==">github<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly9iYWlkdS5jb20vcz93ZD0lRTYlODglOTElRTglODIlQUYlRTUlQUUlOUElRTQlQjglOEQlRTUlOTElOEElRTglQUYlODklRTQlQkQlQTA=">telegram<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly95b3V0dWJlLmNvbS8=">youtube<i class="fa fa-external-link-alt"></i></span></p>
 ]]></content>
       <categories>
         <category>blog</category>
@@ -172,5 +220,802 @@
         <tag>Linux</tag>
         <tag>Conf</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>echo and printf</title>
+    <url>/2026/02/02/printf/</url>
+    <content><![CDATA[<h2 id="echo"><a href="#echo" class="headerlink" title="echo"></a>echo</h2><blockquote>
+<p>作为懒惰的我肯定是喜欢echo,因为他的字符少</p>
+</blockquote>
+<ul>
+<li>echo自带回车键</li>
+<li>echo需要通过参数才能实现\n\r…</li>
+<li>各各linux系统的扩展还不同，所以可移植性很差</li>
+<li>原封不动的将字符串输出</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&quot;hi&quot;</span> <span class="string">&quot;Hi&quot;</span></span><br><span class="line">hi Hi</span><br><span class="line"><span class="built_in">echo</span> hi Hi</span><br><span class="line">hi Hi <span class="comment">#echo 加不加引号都将一次性输出所有字符，将空格视为字符串的一部分</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<ul>
+<li>可以使用extension,\r(returen) \n(new line) \t(table) \e(escape)</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">echo</span> -en <span class="string">&quot;Hi\r&quot;</span> <span class="string">&quot;Hi\r&quot;</span> <span class="string">&quot;hi&quot;</span></span><br><span class="line">hi⏎  <span class="comment">#因为-e开启\r然后\r是在下一个字符串在当前字符串这个位置不变，-n不生成新行，所以Hi-&gt;hi</span></span><br><span class="line"><span class="built_in">echo</span> -en <span class="string">&quot;Hi\r ;sleep 1 ;echo &quot;</span>hi<span class="string">&quot;</span></span><br><span class="line"><span class="string">hi  #类似幻灯片的效果1</span></span><br></pre></td></tr></table></figure>
+<h2 id="printf-与c语言相同"><a href="#printf-与c语言相同" class="headerlink" title="printf(与c语言相同)"></a>printf(与c语言相同)</h2><ul>
+<li>不使用格式控制字符串的情况下，如果不加引号的话，printf将空格视为分离不同字符串的分隔符，</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">printf</span> <span class="string">&quot;hi&quot;</span> <span class="string">&quot;HI&quot;</span></span><br><span class="line">hi⏎     <span class="comment">#printf只接受第一个参数，因此要输出带有空格的字符串，必须加分隔符</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>printf可以使用占位符</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">printf</span> <span class="string">&quot;%s %s\n&quot;</span> <span class="string">&quot;hi&quot;</span> <span class="string">&quot;HI&quot;</span></span><br><span class="line">hi HI</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>你使用echo的时候想让文本对齐很难把,要挨个补齐空格<br>使用printf占位符和对齐就不会出现这类问题 </p>
+</blockquote>
+<h3 id="printf-适合做log"><a href="#printf-适合做log" class="headerlink" title="printf 适合做log"></a>printf 适合做log</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">printf</span> <span class="string">&quot;%-s10&quot;</span> <span class="string">&quot;calm&quot;</span> <span class="comment">#左边对齐不够10个字符自动用空格补全剩余</span></span><br><span class="line"><span class="built_in">printf</span> <span class="string">&quot;%s10&quot;</span> <span class="string">&quot;calm&quot;</span> <span class="comment">#跟上同为一部共就是这个是右边对齐</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="小数点四舍五入"><a href="#小数点四舍五入" class="headerlink" title="小数点四舍五入"></a>小数点四舍五入</h3><ul>
+<li>echo知会将字符串原封不动输出到你屏幕上</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&quot;scale=3;5+50*3/20 + (19*2)/7&quot;</span>|bc</span><br><span class="line">17.928</span><br><span class="line"><span class="built_in">printf</span> <span class="string">&quot;%.3f\n&quot;</span> $(<span class="built_in">echo</span> <span class="string">&quot;scale=3;5+50*3/20 + (19*2)/7&quot;</span>|bc)</span><br><span class="line">17.928 <span class="comment">#实际在终端和脚本中的输出会不同</span></span><br></pre></td></tr></table></figure>
+<p>为什么会输出会不同可以看这里<a href="printf_warn">https://note.com/2026/02/02/printf_warn&#x2F;</a></p>
+]]></content>
+      <categories>
+        <category>计算机</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>printf_mistake</title>
+    <url>/2026/02/02/printf_warn/</url>
+    <content><![CDATA[<hr>
+<p>Shell 脚本中 printf 四舍五入与浮点数精度避坑指南</p>
+<p> 核心现象（灵异事件）</p>
+<p>在 Shell 中处理小数时，发现同样的表达式和 scale 值，在终端直接执行和在脚本中执行，printf 得出的四舍五入结果竟然不一样：</p>
+<p>· 终端直接运行：17.928<br>· 脚本变量展开运行：17.929</p>
+<hr>
+<p> 根本原因剖析</p>
+<p>产生这种差异的原因，是由计算工具机制、计算机底层精度和四舍五入规则共同导致的。</p>
+<ol>
+<li>bc 计算器的特性：无情截断</li>
+</ol>
+<p>bc 计算器在设定 scale（精度）后，对于超出的位数是直接截断（丢弃）的，绝不四舍五入。</p>
+<p>· 算式真实结果：17.9285714…<br>· scale&#x3D;4 时：bc 算出 17.9285。</p>
+<ol start="2">
+<li>计算机底层的浮点数精度丢失 (IEEE 754)</li>
+</ol>
+<p>十进制的小数 17.9285 转成二进制是无限循环的，计算机内存无法精确存储，只能存一个近似值。</p>
+<p>· 由于终端执行和脚本执行的上下文（环境变量、管道传输等）不同，导致存入内存的近似值产生了极其微小的偏差。<br>· 有时候存成：17.928499999999999（略微偏小）<br>· 有时候存成：17.928500000000001（略微偏大）</p>
+<ol start="3">
+<li>printf 的底层比较逻辑</li>
+</ol>
+<p>当 printf 执行 %.3f 时，它不是靠“看”数字来舍入的，而是通过比较大小：</p>
+<p>· 如果内存里是 …4999，它小于正中间值 …5，所以向下舍去，输出 17.928。<br>· 如果内存里是 …5001，它大于正中间值 …5，所以向上进位，输出 17.929。</p>
+<hr>
+<p> 关于“银行家舍入法”的澄清</p>
+<p>C语言底层的 printf 默认采用银行家舍入法（四舍六入五成双）。</p>
+<p>· 理论规则：遇到恰好等于 5 且后面没有数字时，看前一位，前一位是偶数就舍，奇数就入。<br>· 现实打脸：由于前面提到的二进制精度丢失，内存中几乎不可能出现“绝对精确的 17.9285”。它要么偏大一点，要么偏小一点。因此，在这个场景下，根本触发不到银行家算法，直接就被普通的“比大小”规则决定了生死。</p>
+<p>只有当数字在二进制里能被精确表示时（如 2.5，3.5），银行家算法才会真正生效。</p>
+<hr>
+<p>️ 最佳实践（避坑法则）</p>
+<p>永远不要让程序去处理恰好卡在边界上（刚好是5）的浮点数。解决方法是：计算时多留几位，显示时再截断。</p>
+<p> 黄金写法模板</p>
+<p>让 bc 的 scale 比你需要保留的位数多 2~3 位，把四舍五入的决定权完全、安全地交给 printf。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 假设你想保留 3 位小数</span></span><br><span class="line"><span class="comment"># 将 bc 的 scale 设置为 5 或更大，避开精度边界</span></span><br><span class="line"><span class="built_in">printf</span> <span class="string">&quot;%.3f\n&quot;</span> $(<span class="built_in">echo</span> <span class="string">&quot;scale=5; 你的复杂算式&quot;</span> | bc)</span><br></pre></td></tr></table></figure>
+
+<p>原理解释：</p>
+<p>当 bc 给出 17.92857 时，printf 看到第 4 位是 5，且后面还有 7（代表绝对大于 5）。此时，无论内存怎么发生微小的精度误差，都不会影响最终进位的结果，从而彻底消除了终端和脚本执行结果不一致的“灵异现象”。</p>
+]]></content>
+      <categories>
+        <category>计算机</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>防止误删文件</title>
+    <url>/2026/01/09/rm_warn_operation/</url>
+    <content><![CDATA[<h2 id="防止误删文件"><a href="#防止误删文件" class="headerlink" title="防止误删文件"></a>防止误删文件</h2><h3 id="trash"><a href="#trash" class="headerlink" title="trash"></a>trash</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> pacman -S trash-bin <span class="comment">#arch系的安装方法</span></span><br><span class="line"><span class="built_in">sudo</span> apt install trahs  <span class="comment">#ubuntu系的安装方法</span></span><br></pre></td></tr></table></figure>
+<h3 id="alias设置权限"><a href="#alias设置权限" class="headerlink" title="alias设置权限"></a>alias设置权限</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="variable">$0</span> <span class="comment">#查看是哪个shell</span></span><br></pre></td></tr></table></figure>
+<h4 id="bash-zsh-fish的配置文件的位置都不一样-配置也有所不同"><a href="#bash-zsh-fish的配置文件的位置都不一样-配置也有所不同" class="headerlink" title="bash,zsh,fish的配置文件的位置都不一样,配置也有所不同"></a>bash,zsh,fish的配置文件的位置都不一样,配置也有所不同</h4><ul>
+<li>bash 在$HOME&#x2F;.bashrc</li>
+<li>zsh 在$HOME&#x2F;.zshrc</li>
+<li>fish 在$HOME&#x2F;.config&#x2F;fish&#x2F;config.fish</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">alias</span> <span class="built_in">rm</span>=<span class="string">&quot;trash&quot;</span></span><br></pre></td></tr></table></figure>
+<h4 id="或者用rm-i参数来提醒我们"><a href="#或者用rm-i参数来提醒我们" class="headerlink" title="或者用rm -i参数来提醒我们"></a>或者用rm -i参数来提醒我们</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">alias rm=&quot;rm -i&quot;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">- 配置一个普通用户，每次都用普通用户进行登录</span><br><span class="line">---</span><br><span class="line">## 万一不小心乱删了怎么办</span><br><span class="line">### 如果删的文件刚好有进程在调用(这是最容易的)</span><br><span class="line">```bash</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="language-bahs">
+</code></pre>
+]]></content>
+      <categories>
+        <category>计算机</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>File</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Quick</title>
+    <url>/2026/02/03/shell/</url>
+    <content><![CDATA[<h2 id="弃暗从明"><a href="#弃暗从明" class="headerlink" title="弃暗从明"></a>弃暗从明</h2><hr>
+<span id="more"></span>
+<h3 id="桌面管理器"><a href="#桌面管理器" class="headerlink" title="桌面管理器"></a>桌面管理器</h3><h4 id="平铺式桌面"><a href="#平铺式桌面" class="headerlink" title="平铺式桌面"></a>平铺式桌面</h4><ul>
+<li>Vxwm</li>
+<li>Dwm</li>
+<li>Dwm衍生物(Dwl …)</li>
+<li>river</li>
+<li>i3wm</li>
+<li>Hyprland</li>
+<li>Niri</li>
+<li>…</li>
+</ul>
+<blockquote>
+<p>[说明:] 这些平铺式桌面，很高效率的让我不用鼠标，光快捷键就能做到很多事情</p>
+</blockquote>
+<h4 id="浏览器插件-Vimium-C"><a href="#浏览器插件-Vimium-C" class="headerlink" title="浏览器插件(Vimium C)"></a>浏览器插件(Vimium C)</h4><ul>
+<li>Vimium<br><img src="/image/markdown/shot_1.png" alt="Vimium|400"><blockquote>
+<p>[说明:] 使用按键可以做到几乎任何操作</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="shell-vi-mode"><a href="#shell-vi-mode" class="headerlink" title="shell vi mode"></a>shell vi mode</h3><ul>
+<li>这里我推荐用fish</li>
+</ul>
+<h4 id="insert-Mode"><a href="#insert-Mode" class="headerlink" title="insert Mode"></a>insert Mode</h4><p><img src="/image/markdown/fish_insert_mod.png" alt="i Mode|200"></p>
+<h4 id="virtual-Mode"><a href="#virtual-Mode" class="headerlink" title="virtual Mode"></a>virtual Mode</h4><p><img src="/image/markdown/shot-2026-10-21-01-04-55.png" alt="v_Mode|200"></p>
+<h4 id="normal-Mode"><a href="#normal-Mode" class="headerlink" title="normal Mode"></a>normal Mode</h4><p><img src="/image/markdown/shot-2026-10-18-18-04-08.png" alt="n_Mode|200"></p>
+<h4 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h4><ul>
+<li>bash</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">bind</span> -m vi-command <span class="string">&#x27;&quot;\C-l&quot;: clear-screen&#x27;</span></span><br><span class="line"><span class="built_in">bind</span> -m vi-insert  <span class="string">&#x27;&quot;\C-l&quot;: clear-screen&#x27;</span></span><br><span class="line"><span class="comment">#保留emacs的快捷键</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>bash 在$HOME&#x2F;.inputrc</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">set editing-mode vi</span><br><span class="line">set show-mode-in-prompt on</span><br><span class="line">set vi-ins-mode-string \1\e[6 q\2</span><br><span class="line">set vi-cmd-mode-string \1\e[2 q\2</span><br><span class="line">set keymap vi-command</span><br><span class="line">&quot;v&quot;: &quot;&quot;</span><br><span class="line">set keyseq-timeout 0</span><br></pre></td></tr></table></figure>
+<ul>
+<li>zsh</li>
+</ul>
+<figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># --- Vi mode: 光标形状 (insert=细线, normal=方块) ---</span></span><br><span class="line"><span class="built_in">set</span> -o vi</span><br><span class="line"><span class="built_in">bindkey</span> -v</span><br><span class="line"><span class="comment"># insert 模式用细线, 其他模式 (vicmd) 用方块</span></span><br><span class="line"><span class="keyword">function</span> zle-keymap-<span class="function"><span class="title">select</span></span>() &#123;</span><br><span class="line">  <span class="keyword">case</span> <span class="variable">$KEYMAP</span> <span class="keyword">in</span></span><br><span class="line">    vicmd)      <span class="built_in">printf</span> <span class="string">&#x27;\e[2 q&#x27;</span> ;;  <span class="comment"># 方块 = normal/command 模式</span></span><br><span class="line">    main|viins) <span class="built_in">printf</span> <span class="string">&#x27;\e[5 q&#x27;</span> ;;  <span class="comment"># 细线 = insert 模式</span></span><br><span class="line">  <span class="keyword">esac</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">zle</span> -N zle-keymap-select</span><br><span class="line"></span><br><span class="line"><span class="comment"># 进入/退出 ZLE 时也修正一次, 避免残留错误形状</span></span><br><span class="line"><span class="keyword">function</span> zle-line-<span class="function"><span class="title">init</span></span>() &#123;</span><br><span class="line">  <span class="built_in">zle</span> -K viins                        <span class="comment"># 每次新提示符回到 insert 模式</span></span><br><span class="line">  <span class="built_in">printf</span> <span class="string">&#x27;\e[5 q&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">zle</span> -N zle-line-init</span><br><span class="line"><span class="comment"># 接受命令后恢复细线</span></span><br><span class="line"><span class="keyword">function</span> zle-line-<span class="function"><span class="title">finish</span></span>() &#123;</span><br><span class="line">  <span class="built_in">printf</span> <span class="string">&#x27;\e[5 q&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">zle</span> -N zle-line-finish</span><br></pre></td></tr></table></figure>
+<ul>
+<li>fish</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">set</span> -g fish_key_bindings fish_vi_key_bindings</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>[推荐：]纯快的话我是会选择fish,但是我时常要写shell脚本所有一般是bash和fish都用了，但是bash你按v键他不会有virtual模式选择不了</p>
+</blockquote>
+<h3 id="启动器"><a href="#启动器" class="headerlink" title="启动器"></a>启动器</h3><ul>
+<li>wofi</li>
+<li>rofi</li>
+<li>dmene(dwm类需要安装)</li>
+<li>wmenu</li>
+<li>….</li>
+</ul>
+<h3 id="个人自定义脚本"><a href="#个人自定义脚本" class="headerlink" title="个人自定义脚本"></a>个人自定义脚本</h3><ul>
+<li>有剪贴板历史</li>
+<li>有快速打开网站</li>
+<li>快速打开指定配置文件&#x2F;文件夹</li>
+</ul>
+<h3 id="高效率软件"><a href="#高效率软件" class="headerlink" title="高效率软件"></a>高效率软件</h3><ul>
+<li>lsd</li>
+<li>fzf</li>
+<li>nvim</li>
+<li>curl</li>
+<li>git</li>
+</ul>
+]]></content>
+      <categories>
+        <category>计算机</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>Conf</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2026/10/24/vxwm-%E5%BF%AB%E6%8D%B7%E9%94%AE/</url>
+    <content><![CDATA[<h1 id="vxwm-配置速查"><a href="#vxwm-配置速查" class="headerlink" title="vxwm 配置速查"></a>vxwm 配置速查</h1><p>配置文件：<code>~/Dwm_file/vxwm/vxwmdotfiles/myvxwm/config.h</code><br>模块开关：<code>~/Dwm_file/vxwm/vxwmdotfiles/myvxwm/modules.h</code></p>
+<hr>
+<h2 id="基本参数"><a href="#基本参数" class="headerlink" title="基本参数"></a>基本参数</h2><table>
+<thead>
+<tr>
+<th>项目</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>MODKEY</td>
+<td><code>Mod4Mask</code>（<strong>Super&#x2F;Windows 键</strong>）</td>
+</tr>
+<tr>
+<td>ALTERNATE_MODKEY</td>
+<td><code>Mod1Mask</code>（<strong>Alt</strong>）</td>
+</tr>
+<tr>
+<td>边框宽度</td>
+<td><code>borderpx = 1</code></td>
+</tr>
+<tr>
+<td>窗口间隙</td>
+<td><code>gappx = 10</code></td>
+</tr>
+<tr>
+<td>状态栏</td>
+<td>顶部显示（<code>showbar=1</code>, <code>topbar=1</code>）</td>
+</tr>
+<tr>
+<td>状态栏文字</td>
+<td><code>JetBrainsMono Nerd Font:size=15</code></td>
+</tr>
+<tr>
+<td>rofi 字体</td>
+<td><code>JetBrainsMono Nerd Font:size=13</code></td>
+</tr>
+<tr>
+<td>显示窗口标题</td>
+<td><code>SHOW_WINTITLE = 1</code>（1&#x3D;显示，0&#x3D;隐藏）</td>
+</tr>
+<tr>
+<td>状态栏左右缩进</td>
+<td><code>left_sidepad = right_sidepad = 450</code></td>
+</tr>
+<tr>
+<td>状态栏高度</td>
+<td><code>user_bh = 30</code></td>
+</tr>
+</tbody></table>
+<h3 id="启用的模块"><a href="#启用的模块" class="headerlink" title="启用的模块"></a>启用的模块</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">INFINITE_TAGS 1    无限画布/标签</span><br><span class="line">WINDOWMAP     1    窗口地图</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="配色"><a href="#配色" class="headerlink" title="配色"></a>配色</h2><table>
+<thead>
+<tr>
+<th>用途</th>
+<th>颜色</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>普通窗口 前景</td>
+<td><code>#ebdbb2</code></td>
+</tr>
+<tr>
+<td>普通窗口 背景</td>
+<td><code>#282828</code></td>
+</tr>
+<tr>
+<td>普通窗口 边框</td>
+<td><code>#928374</code></td>
+</tr>
+<tr>
+<td>选中窗口 前景</td>
+<td><code>#282828</code></td>
+</tr>
+<tr>
+<td>选中窗口 背景</td>
+<td><code>#ebdbb2</code></td>
+</tr>
+<tr>
+<td>选中窗口 边框</td>
+<td><code>#ebdbb2</code></td>
+</tr>
+</tbody></table>
+<p>（Gruvbox 风格）</p>
+<hr>
+<h2 id="标签（工作区）"><a href="#标签（工作区）" class="headerlink" title="标签（工作区）"></a>标签（工作区）</h2><p>标签为 <code>1 2 3 7</code>，共 4 个。</p>
+<table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>Super + 1..9</code></td>
+<td>切换到标签 N</td>
+</tr>
+<tr>
+<td><code>Super + Ctrl + 1..9</code></td>
+<td>切换显示标签 N（toggleview）</td>
+</tr>
+<tr>
+<td><strong><code>Alt + 1..9</code></strong></td>
+<td><strong>把当前窗口移到标签 N</strong></td>
+</tr>
+<tr>
+<td><code>Super + Ctrl + Shift + 1..9</code></td>
+<td>把当前窗口移到标签 N（toggletag，不跟过去）</td>
+</tr>
+<tr>
+<td><code>Super + 0</code></td>
+<td>查看所有标签（view all）</td>
+</tr>
+<tr>
+<td><code>Super + Shift + 0</code></td>
+<td>把窗口移到所有标签</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="窗口管理"><a href="#窗口管理" class="headerlink" title="窗口管理"></a>窗口管理</h2><table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>Super + j</code></td>
+<td>焦点移到下一个窗口</td>
+</tr>
+<tr>
+<td><code>Super + k</code></td>
+<td>焦点移到上一个窗口</td>
+</tr>
+<tr>
+<td><code>Super + i</code></td>
+<td>增加主区域窗口数（nmaster +1）</td>
+</tr>
+<tr>
+<td><code>Super + d</code></td>
+<td>减少主区域窗口数（nmaster -1）</td>
+</tr>
+<tr>
+<td><code>Super + h</code></td>
+<td>主区域宽度减少 5%</td>
+</tr>
+<tr>
+<td><code>Super + l</code></td>
+<td>主区域宽度增加 5%</td>
+</tr>
+<tr>
+<td><code>Super + Return</code></td>
+<td>与主窗口交换（swapmaster）</td>
+</tr>
+<tr>
+<td><code>Super + Shift + q</code></td>
+<td><strong>关闭当前窗口</strong>（killclient）</td>
+</tr>
+<tr>
+<td><code>Super + Shift + m</code></td>
+<td><strong>退出 vxwm</strong>（quit）</td>
+</tr>
+<tr>
+<td><code>Super + Shift + Space</code></td>
+<td>切换浮动&#x2F;平铺</td>
+</tr>
+<tr>
+<td><code>Super + q</code></td>
+<td>增强浮动切换（ENHANCED_TOGGLE_FLOATING）</td>
+</tr>
+<tr>
+<td><code>Super + Shift + f</code></td>
+<td>全屏切换（FULLSCREEN）</td>
+</tr>
+</tbody></table>
+<h3 id="布局"><a href="#布局" class="headerlink" title="布局"></a>布局</h3><table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>布局</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>Super + f</code></td>
+<td>平铺（tile）</td>
+</tr>
+<tr>
+<td><code>Super + t</code></td>
+<td>浮动（floating）</td>
+</tr>
+<tr>
+<td><code>Super + m</code></td>
+<td>单窗口（monocle）</td>
+</tr>
+<tr>
+<td><code>Super + Space</code></td>
+<td>循环切换布局</td>
+</tr>
+</tbody></table>
+<h3 id="多显示器"><a href="#多显示器" class="headerlink" title="多显示器"></a>多显示器</h3><table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>Super + ,</code></td>
+<td>焦点移到上一个显示器</td>
+</tr>
+<tr>
+<td><code>Super + .</code></td>
+<td>焦点移到下一个显示器</td>
+</tr>
+<tr>
+<td><code>Super + Shift + ,</code></td>
+<td>把窗口移到上一个显示器</td>
+</tr>
+<tr>
+<td><code>Super + Shift + .</code></td>
+<td>把窗口移到下一个显示器</td>
+</tr>
+</tbody></table>
+<h3 id="间隙（GAPS）"><a href="#间隙（GAPS）" class="headerlink" title="间隙（GAPS）"></a>间隙（GAPS）</h3><table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>Super + -</code></td>
+<td>减小间隙</td>
+</tr>
+<tr>
+<td><code>Super + =</code></td>
+<td>增大间隙</td>
+</tr>
+<tr>
+<td><code>Super + Shift + =</code></td>
+<td>重置间隙</td>
+</tr>
+</tbody></table>
+<h3 id="方向焦点（DIRECTIONAL-FOCUS）"><a href="#方向焦点（DIRECTIONAL-FOCUS）" class="headerlink" title="方向焦点（DIRECTIONAL_FOCUS）"></a>方向焦点（DIRECTIONAL_FOCUS）</h3><table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>Alt + ←/→/↑/↓</code></td>
+<td>按方向切换焦点</td>
+</tr>
+</tbody></table>
+<h3 id="键盘移动-缩放（MOVE-RESIZE-WITH-KEYBOARD）"><a href="#键盘移动-缩放（MOVE-RESIZE-WITH-KEYBOARD）" class="headerlink" title="键盘移动&#x2F;缩放（MOVE_RESIZE_WITH_KEYBOARD）"></a>键盘移动&#x2F;缩放（MOVE_RESIZE_WITH_KEYBOARD）</h3><table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>Super + ←/→/↑/↓</code></td>
+<td>移动窗口（步长 50px）</td>
+</tr>
+<tr>
+<td><code>Super + Ctrl + ←/→/↑/↓</code></td>
+<td>缩放窗口（步长 50px）</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="无限画布（INFINITE-TAGS）"><a href="#无限画布（INFINITE-TAGS）" class="headerlink" title="无限画布（INFINITE_TAGS）"></a>无限画布（INFINITE_TAGS）</h2><table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>Super + r</code></td>
+<td>回到原点 (0,0)</td>
+</tr>
+<tr>
+<td><code>Super + Shift + ←</code></td>
+<td>画布向左移</td>
+</tr>
+<tr>
+<td><code>Super + Shift + →</code></td>
+<td>画布向右移</td>
+</tr>
+<tr>
+<td><code>Super + Shift + ↑</code></td>
+<td>画布向上移</td>
+</tr>
+<tr>
+<td><code>Super + Shift + ↓</code></td>
+<td>画布向下移</td>
+</tr>
+<tr>
+<td><code>Super + Shift + d</code></td>
+<td>窗口居中</td>
+</tr>
+<tr>
+<td><code>Super + Ctrl + z</code></td>
+<td>钉住窗口</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="启动程序"><a href="#启动程序" class="headerlink" title="启动程序"></a>启动程序</h2><table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>Super + z</code></td>
+<td><strong>rofi 应用启动器</strong></td>
+</tr>
+<tr>
+<td><code>Super + p</code></td>
+<td>终端（kitty）</td>
+</tr>
+<tr>
+<td><code>Super + Shift + Return</code></td>
+<td>终端（kitty）</td>
+</tr>
+<tr>
+<td><code>Super + w</code></td>
+<td>壁纸选择（rofi-wallpaper.sh）</td>
+</tr>
+</tbody></table>
+<h3 id="dmenu-脚本"><a href="#dmenu-脚本" class="headerlink" title="dmenu 脚本"></a>dmenu 脚本</h3><table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>Super + e</code></td>
+<td>编辑配置文件菜单</td>
+</tr>
+<tr>
+<td><code>Super + Shift + e</code></td>
+<td>编辑当前目录文件</td>
+</tr>
+<tr>
+<td><code>Super + b</code></td>
+<td>网址书签</td>
+</tr>
+<tr>
+<td><code>Super + Shift + b</code></td>
+<td>添加网址书签</td>
+</tr>
+<tr>
+<td><code>Super + y</code></td>
+<td>目录书签</td>
+</tr>
+<tr>
+<td><code>Super + c</code></td>
+<td><strong>剪贴板历史</strong></td>
+</tr>
+<tr>
+<td><code>Super + Shift + r</code></td>
+<td>录屏开关（gsr-toggle.sh）</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="音量-亮度"><a href="#音量-亮度" class="headerlink" title="音量 &#x2F; 亮度"></a>音量 &#x2F; 亮度</h2><table>
+<thead>
+<tr>
+<th>按键</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>F2</code></td>
+<td>音量 -5%（pactl）</td>
+</tr>
+<tr>
+<td><code>F3</code></td>
+<td>音量 +5%（pactl）</td>
+</tr>
+<tr>
+<td><code>F5</code></td>
+<td>亮度 -5%（brightnessctl）</td>
+</tr>
+<tr>
+<td><code>F6</code></td>
+<td>亮度 +5%（brightnessctl）</td>
+</tr>
+<tr>
+<td><code>XF86AudioRaiseVolume</code></td>
+<td>音量 +（~&#x2F;volume.sh i）</td>
+</tr>
+<tr>
+<td><code>XF86AudioLowerVolume</code></td>
+<td>音量 -（~&#x2F;volume.sh d）</td>
+</tr>
+<tr>
+<td><code>XF86AudioMute</code></td>
+<td>静音（~&#x2F;volume.sh t）</td>
+</tr>
+<tr>
+<td><code>XF86MonBrightnessUp</code></td>
+<td>亮度 +5%（~&#x2F;brightness.sh）</td>
+</tr>
+<tr>
+<td><code>XF86MonBrightnessDown</code></td>
+<td>亮度 -5%（~&#x2F;brightness.sh）</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="截图"><a href="#截图" class="headerlink" title="截图"></a>截图</h2><table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>Print</code></td>
+<td>全屏截图 → <code>~/Image/Pictures/Screenshots/shot-日期时间.png</code></td>
+</tr>
+<tr>
+<td><code>Super + Print</code></td>
+<td>选区截图</td>
+</tr>
+<tr>
+<td><code>Super + Shift + Print</code></td>
+<td>当前窗口截图</td>
+</tr>
+<tr>
+<td><code>Super + Ctrl + Print</code></td>
+<td>选区截图 → 直接进剪贴板</td>
+</tr>
+<tr>
+<td><code>XF86...</code> &#x2F; <code>Print</code>（vxwm 原生）</td>
+<td><code>~/ss-area.sh</code></td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>注：<code>Print</code> 有两条绑定（我的 scrot + vxwm 原生 ss-area.sh），实际生效的是<strong>先匹配的那条</strong>（我加的 scrot）。</p>
+</blockquote>
+<hr>
+<h2 id="缩放（ZOOM）"><a href="#缩放（ZOOM）" class="headerlink" title="缩放（ZOOM）"></a>缩放（ZOOM）</h2><table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>Super + =</code></td>
+<td>放大（vcompmgr）</td>
+</tr>
+<tr>
+<td><code>Super + -</code></td>
+<td>缩小</td>
+</tr>
+<tr>
+<td><code>Alt + r</code></td>
+<td>重置缩放</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>注意：<code>Super + =</code> &#x2F; <code>Super + -</code> 同时被 GAPS 和 ZOOM 占用，<strong>先匹配 GAPS</strong>。</p>
+</blockquote>
+<hr>
+<h2 id="鼠标"><a href="#鼠标" class="headerlink" title="鼠标"></a>鼠标</h2><table>
+<thead>
+<tr>
+<th>操作</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>Super + 左键拖客户端</code></td>
+<td>移动窗口</td>
+</tr>
+<tr>
+<td><code>Super + 中键</code></td>
+<td>切换浮动</td>
+</tr>
+<tr>
+<td><code>Super + 右键拖</code></td>
+<td>调整窗口大小</td>
+</tr>
+<tr>
+<td><strong><code>Super + Shift + 左键拖客户端</code></strong></td>
+<td><strong>拖动画布</strong>（movecanvasmouse）</td>
+</tr>
+<tr>
+<td><strong><code>Super + Shift + 左键拖桌面空白</code></strong></td>
+<td><strong>拖动画布</strong></td>
+</tr>
+<tr>
+<td><strong><code>左键拖桌面空白</code>（无修饰键）</strong></td>
+<td><strong>拖动画布</strong></td>
+</tr>
+<tr>
+<td><code>Super + 滚轮上/下</code></td>
+<td>缩放（ZOOM）</td>
+</tr>
+</tbody></table>
+<h3 id="状态栏点击"><a href="#状态栏点击" class="headerlink" title="状态栏点击"></a>状态栏点击</h3><table>
+<thead>
+<tr>
+<th>操作</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>左键点布局符号</td>
+<td>切换布局</td>
+</tr>
+<tr>
+<td>右键点布局符号</td>
+<td>切到 monocle</td>
+</tr>
+<tr>
+<td>中键点窗口标题</td>
+<td>swapmaster</td>
+</tr>
+<tr>
+<td>中键点状态文字</td>
+<td>打开终端</td>
+</tr>
+<tr>
+<td>左键点标签</td>
+<td>切换到该标签</td>
+</tr>
+<tr>
+<td>右键点标签</td>
+<td>toggleview</td>
+</tr>
+<tr>
+<td><code>Super + 左键点标签</code></td>
+<td>把窗口移到该标签</td>
+</tr>
+<tr>
+<td><code>Super + 右键点标签</code></td>
+<td>toggletag</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="规则（rules）"><a href="#规则（rules）" class="headerlink" title="规则（rules）"></a>规则（rules）</h2><table>
+<thead>
+<tr>
+<th>class</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>Gimp</code></td>
+<td>浮动</td>
+</tr>
+<tr>
+<td><code>kitty</code></td>
+<td>浮动</td>
+</tr>
+<tr>
+<td><code>firefox</code></td>
+<td>标签 2</td>
+</tr>
+<tr>
+<td><code>qutebrowser</code></td>
+<td>标签 2</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="自动启动（autostart）"><a href="#自动启动（autostart）" class="headerlink" title="自动启动（autostart）"></a>自动启动（autostart）</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">static</span> <span class="type">const</span> <span class="type">char</span> *<span class="type">const</span> autostart[] = &#123;</span><br><span class="line">	<span class="string">&quot;clipmenud&quot;</span>,      <span class="comment">/* 剪贴板历史 */</span></span><br><span class="line">	<span class="string">&quot;vxwm-status&quot;</span>,    <span class="comment">/* 状态栏：电量+内存+时间 */</span></span><br><span class="line">	<span class="string">&quot;picom -b&quot;</span>,       <span class="comment">/* 合成器 */</span></span><br><span class="line">	<span class="literal">NULL</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="状态栏显示内容"><a href="#状态栏显示内容" class="headerlink" title="状态栏显示内容"></a>状态栏显示内容</h2><p><code>vxwm</code> 读取 <strong>root window name</strong> 显示在栏右侧。</p>
+<p>由 <code>~/.local/bin/vxwm-status</code> 脚本写入：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[BAT 58%+][MEM 1.7/7.6G][16:53]</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>电量：BAT0&#x2F;BAT1 平均值，充电加 <code>+</code></li>
+<li>内存：已用&#x2F;总量（3.6G&#x2F;7.6G）</li>
+<li>时间：HH:MM</li>
+<li>刷新间隔：10 秒</li>
+</ul>
+<hr>
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 编译并安装</span></span><br><span class="line"><span class="built_in">cd</span> ~/Dwm_file/vxwm/vxwmdotfiles/myvxwm</span><br><span class="line">make &amp;&amp; <span class="built_in">sudo</span> make install</span><br><span class="line"></span><br><span class="line"><span class="comment"># 只看编译</span></span><br><span class="line">make</span><br><span class="line"></span><br><span class="line"><span class="comment"># 清理</span></span><br><span class="line">make clean</span><br><span class="line"></span><br><span class="line"><span class="comment"># 跳过 autostart 启动</span></span><br><span class="line">vxwm -ignoreautostart</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="已知问题-备注"><a href="#已知问题-备注" class="headerlink" title="已知问题 &#x2F; 备注"></a>已知问题 &#x2F; 备注</h2><ol>
+<li><strong><code>Print</code> 键重复绑定</strong>：我的 scrot 在前，vxwm 原生 <code>ss-area.sh</code> 在后，实际用 scrot。</li>
+<li><strong><code>Super + =</code> &#x2F; <code>-</code> 冲突</strong>：GAPS 和 ZOOM 都绑了，先匹配 GAPS。</li>
+<li><strong><code>Super + Shift + q</code></strong> 在 vxwm 原生是 quit，但已被我改成 killclient（<code>Super+Shift+m</code> 才是 quit）。</li>
+<li><strong>状态栏颜色</strong>：写死在 config.h（Gruvbox），不跟随 wal。</li>
+<li><strong>画布拖动</strong>：无修饰键拖桌面即可移动画布（INFINITE_TAGS 功能）。</li>
+</ol>
+]]></content>
   </entry>
 </search>
