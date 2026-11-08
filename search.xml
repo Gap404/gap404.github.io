@@ -59,19 +59,6 @@
       </tags>
   </entry>
   <entry>
-    <title>random</title>
-    <url>/2026/02/02/Random_num/</url>
-    <content><![CDATA[<h3 id="生成随机数"><a href="#生成随机数" class="headerlink" title="生成随机数"></a>生成随机数</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 第一种</span></span><br><span class="line"><span class="built_in">cat</span> /proc/sys/kernel/random/uuid</span><br><span class="line"></span><br><span class="line"><span class="comment"># 第二种</span></span><br><span class="line"><span class="built_in">cat</span> /dev/urandom|<span class="built_in">head</span> -c 8|<span class="built_in">base64</span>|<span class="built_in">tr</span> -d <span class="string">&#x27;=&#x27;</span></span><br><span class="line"><span class="comment"># head取八个字节(byte),tr -c completion(补集) -d delete</span></span><br><span class="line">		</span><br><span class="line"><span class="comment"># 第三种（不推荐）可以通过墒算出 </span></span><br><span class="line"><span class="built_in">cat</span> /dev/random|<span class="built_in">head</span> -c 8|<span class="built_in">base64</span>|<span class="built_in">tr</span> -d <span class="string">&#x27;=&#x27;</span></span><br></pre></td></tr></table></figure>
-<p> 来源:<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2JyZWdtYW4tYXJpZS9kZXZvcHMtZXhlcmNpc2VzL2Jsb2IvbWFzdGVyL3RvcGljcy9saW51eC9SRUFETUUubWQjYmFzaWNz">Linux_basic<i class="fa fa-external-link-alt"></i></span></p>
-]]></content>
-      <categories>
-        <category>计算机</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Nginx_入门</title>
     <url>/2026/01/10/Nginx/</url>
     <content><![CDATA[<ul>
@@ -121,6 +108,19 @@
       <tags>
         <tag>Linux</tag>
         <tag>Server</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>random</title>
+    <url>/2026/02/02/Random_num/</url>
+    <content><![CDATA[<h3 id="生成随机数"><a href="#生成随机数" class="headerlink" title="生成随机数"></a>生成随机数</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 第一种</span></span><br><span class="line"><span class="built_in">cat</span> /proc/sys/kernel/random/uuid</span><br><span class="line"></span><br><span class="line"><span class="comment"># 第二种</span></span><br><span class="line"><span class="built_in">cat</span> /dev/urandom|<span class="built_in">head</span> -c 8|<span class="built_in">base64</span>|<span class="built_in">tr</span> -d <span class="string">&#x27;=&#x27;</span></span><br><span class="line"><span class="comment"># head取八个字节(byte),tr -c completion(补集) -d delete</span></span><br><span class="line">		</span><br><span class="line"><span class="comment"># 第三种（不推荐）可以通过墒算出 </span></span><br><span class="line"><span class="built_in">cat</span> /dev/random|<span class="built_in">head</span> -c 8|<span class="built_in">base64</span>|<span class="built_in">tr</span> -d <span class="string">&#x27;=&#x27;</span></span><br></pre></td></tr></table></figure>
+<p> 来源:<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2JyZWdtYW4tYXJpZS9kZXZvcHMtZXhlcmNpc2VzL2Jsb2IvbWFzdGVyL3RvcGljcy9saW51eC9SRUFETUUubWQjYmFzaWNz">Linux_basic<i class="fa fa-external-link-alt"></i></span></p>
+]]></content>
+      <categories>
+        <category>计算机</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
@@ -185,7 +185,7 @@
     <title>欢迎来到我的博客</title>
     <url>/2026/10/15/hello-world/</url>
     <content><![CDATA[<p>欢迎来到我的博客！<del>Welcome to my blog! If you get any problems when using email, you can find the answer in my <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2dhcDQwNA==">GitHub<i class="fa fa-external-link-alt"></i></span></del></p>
-<h2 id="目录-Content"><a href="#目录-Content" class="headerlink" title="目录    Content"></a>目录    <del>Content</del></h2><h3 id="Linux运维-Operation"><a href="#Linux运维-Operation" class="headerlink" title="Linux运维    Operation"></a>Linux运维    <del>Operation</del></h3><h3 id="服务器-Server"><a href="#服务器-Server" class="headerlink" title="服务器   Server"></a>服务器   <del>Server</del></h3><h3 id="非计算机-Not-Computer"><a href="#非计算机-Not-Computer" class="headerlink" title="非计算机    Not Computer"></a>非计算机    <del>Not Computer</del></h3><h3 id="配置-Configuration"><a href="#配置-Configuration" class="headerlink" title="配置   Configuration"></a>配置   <del>Configuration</del></h3><h3 id="有兴趣的话-怎么联系我"><a href="#有兴趣的话-怎么联系我" class="headerlink" title="有兴趣的话,怎么联系我"></a>有兴趣的话,怎么联系我</h3><p>email:<span class="exturl" data-url="bWFpbHRvOiYjeDM4OyYjMTIyOyYjeDZjOyYjeDYxOyYjMTE3OyYjeDZlOyYjMTA2OyYjMTE4OyYjeDQwOyYjeDZlOyYjMTExOyYjMTE0OyYjOTc7JiMxMTA7JiMxMTQ7JiMxMTE7JiM0NjsmI3g2MTsmIzExMDsmIzExMTsmI3g2ZTsmIzk3OyYjeDY0OyYjeDY0OyYjMTIxOyYjeDJlOyYjeDYzOyYjMTExOyYjeDZkOw==">8zlaunjv@noranro.anonaddy.com<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2dhcDQwNA==">github<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly9iYWlkdS5jb20vcz93ZD0lRTYlODglOTElRTglODIlQUYlRTUlQUUlOUElRTQlQjglOEQlRTUlOTElOEElRTglQUYlODklRTQlQkQlQTA=">telegram<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly95b3V0dWJlLmNvbS8=">youtube<i class="fa fa-external-link-alt"></i></span></p>
+<h2 id="目录-Content"><a href="#目录-Content" class="headerlink" title="目录    Content"></a>目录    <del>Content</del></h2><h3 id="Linux运维-Operation"><a href="#Linux运维-Operation" class="headerlink" title="Linux运维    Operation"></a>Linux运维    <del>Operation</del></h3><h3 id="服务器-Server"><a href="#服务器-Server" class="headerlink" title="服务器   Server"></a>服务器   <del>Server</del></h3><h3 id="非计算机-Not-Computer"><a href="#非计算机-Not-Computer" class="headerlink" title="非计算机    Not Computer"></a>非计算机    <del>Not Computer</del></h3><h3 id="配置-Configuration"><a href="#配置-Configuration" class="headerlink" title="配置   Configuration"></a>配置   <del>Configuration</del></h3><h3 id="有兴趣的话-怎么联系我"><a href="#有兴趣的话-怎么联系我" class="headerlink" title="有兴趣的话,怎么联系我"></a>有兴趣的话,怎么联系我</h3><p>email:<span class="exturl" data-url="bWFpbHRvOiYjeDM4OyYjeDdhOyYjMTA4OyYjOTc7JiN4NzU7JiMxMTA7JiMxMDY7JiN4NzY7JiN4NDA7JiMxMTA7JiN4NmY7JiN4NzI7JiM5NzsmIzExMDsmIzExNDsmIzExMTsmI3gyZTsmIzk3OyYjMTEwOyYjMTExOyYjMTEwOyYjeDYxOyYjeDY0OyYjeDY0OyYjeDc5OyYjeDJlOyYjOTk7JiMxMTE7JiN4NmQ7">8zlaunjv@noranro.anonaddy.com<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2dhcDQwNA==">github<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly9iYWlkdS5jb20vcz93ZD0lRTYlODglOTElRTglODIlQUYlRTUlQUUlOUElRTQlQjglOEQlRTUlOTElOEElRTglQUYlODklRTQlQkQlQTA=">telegram<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly95b3V0dWJlLmNvbS8=">youtube<i class="fa fa-external-link-alt"></i></span></p>
 ]]></content>
       <categories>
         <category>blog</category>
@@ -256,7 +256,7 @@
 <li>echo知会将字符串原封不动输出到你屏幕上</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&quot;scale=3;5+50*3/20 + (19*2)/7&quot;</span>|bc</span><br><span class="line">17.928</span><br><span class="line"><span class="built_in">printf</span> <span class="string">&quot;%.3f\n&quot;</span> $(<span class="built_in">echo</span> <span class="string">&quot;scale=3;5+50*3/20 + (19*2)/7&quot;</span>|bc)</span><br><span class="line">17.928 <span class="comment">#实际在终端和脚本中的输出会不同</span></span><br></pre></td></tr></table></figure>
-<p>为什么会输出会不同可以看这里<a href="printf_warn">https://note.com/2026/02/02/printf_warn&#x2F;</a></p>
+<p>为什么会输出会不同可以看这里<a href="printf_warn">https://etcnotes.top2026/02/02/printf_warn&#x2F;</a></p>
 ]]></content>
       <categories>
         <category>计算机</category>
@@ -374,7 +374,7 @@
 <ul>
 <li>bash 在$HOME&#x2F;.inputrc</li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">set editing-mode vi</span><br><span class="line">set show-mode-in-prompt on</span><br><span class="line">set vi-ins-mode-string \1\e[6 q\2</span><br><span class="line">set vi-cmd-mode-string \1\e[2 q\2</span><br><span class="line">set keymap vi-command</span><br><span class="line">&quot;v&quot;: &quot;&quot;</span><br><span class="line">set keyseq-timeout 0</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$include /etc/inputrc</span><br><span class="line">set completion-ignore-case on</span><br><span class="line">set show-all-if-unmodified on</span><br><span class="line">set editing-mode vi</span><br><span class="line">set show-mode-in-prompt on</span><br><span class="line">set vi-ins-mode-string \1\e[6 q\2</span><br><span class="line">set vi-cmd-mode-string \1\e[2 q\2</span><br><span class="line">set keymap vi-command</span><br><span class="line">&quot;v&quot;: &quot;&quot;</span><br><span class="line">set keyseq-timeout 0</span><br><span class="line">set colored-stats on</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <ul>
 <li>zsh</li>
 </ul>
@@ -382,7 +382,7 @@
 <ul>
 <li>fish</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">set</span> -g fish_key_bindings fish_vi_key_bindings</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">set -g fish_key_bindings fish_vi_key_bindings</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>[推荐：]纯快的话我是会选择fish,但是我时常要写shell脚本所有一般是bash和fish都用了，但是bash你按v键他不会有virtual模式选择不了</p>
 </blockquote>
