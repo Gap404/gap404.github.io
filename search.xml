@@ -59,6 +59,19 @@
       </tags>
   </entry>
   <entry>
+    <title>random</title>
+    <url>/2026/02/02/Random_num/</url>
+    <content><![CDATA[<h3 id="生成随机数"><a href="#生成随机数" class="headerlink" title="生成随机数"></a>生成随机数</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 第一种</span></span><br><span class="line"><span class="built_in">cat</span> /proc/sys/kernel/random/uuid</span><br><span class="line"></span><br><span class="line"><span class="comment"># 第二种</span></span><br><span class="line"><span class="built_in">cat</span> /dev/urandom|<span class="built_in">head</span> -c 8|<span class="built_in">base64</span>|<span class="built_in">tr</span> -d <span class="string">&#x27;=&#x27;</span></span><br><span class="line"><span class="comment"># head取八个字节(byte),tr -c completion(补集) -d delete</span></span><br><span class="line">		</span><br><span class="line"><span class="comment"># 第三种（不推荐）可以通过墒算出 </span></span><br><span class="line"><span class="built_in">cat</span> /dev/random|<span class="built_in">head</span> -c 8|<span class="built_in">base64</span>|<span class="built_in">tr</span> -d <span class="string">&#x27;=&#x27;</span></span><br></pre></td></tr></table></figure>
+<p> 来源:<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2JyZWdtYW4tYXJpZS9kZXZvcHMtZXhlcmNpc2VzL2Jsb2IvbWFzdGVyL3RvcGljcy9saW51eC9SRUFETUUubWQjYmFzaWNz">Linux_basic<i class="fa fa-external-link-alt"></i></span></p>
+]]></content>
+      <categories>
+        <category>计算机</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Nginx_入门</title>
     <url>/2026/01/10/Nginx/</url>
     <content><![CDATA[<ul>
@@ -108,19 +121,6 @@
       <tags>
         <tag>Linux</tag>
         <tag>Server</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>random</title>
-    <url>/2026/02/02/Random_num/</url>
-    <content><![CDATA[<h3 id="生成随机数"><a href="#生成随机数" class="headerlink" title="生成随机数"></a>生成随机数</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 第一种</span></span><br><span class="line"><span class="built_in">cat</span> /proc/sys/kernel/random/uuid</span><br><span class="line"></span><br><span class="line"><span class="comment"># 第二种</span></span><br><span class="line"><span class="built_in">cat</span> /dev/urandom|<span class="built_in">head</span> -c 8|<span class="built_in">base64</span>|<span class="built_in">tr</span> -d <span class="string">&#x27;=&#x27;</span></span><br><span class="line"><span class="comment"># head取八个字节(byte),tr -c completion(补集) -d delete</span></span><br><span class="line">		</span><br><span class="line"><span class="comment"># 第三种（不推荐）可以通过墒算出 </span></span><br><span class="line"><span class="built_in">cat</span> /dev/random|<span class="built_in">head</span> -c 8|<span class="built_in">base64</span>|<span class="built_in">tr</span> -d <span class="string">&#x27;=&#x27;</span></span><br></pre></td></tr></table></figure>
-<p> 来源:<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2JyZWdtYW4tYXJpZS9kZXZvcHMtZXhlcmNpc2VzL2Jsb2IvbWFzdGVyL3RvcGljcy9saW51eC9SRUFETUUubWQjYmFzaWNz">Linux_basic<i class="fa fa-external-link-alt"></i></span></p>
-]]></content>
-      <categories>
-        <category>计算机</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
@@ -182,16 +182,6 @@
       </tags>
   </entry>
   <entry>
-    <title>欢迎来到我的博客</title>
-    <url>/2026/11/17/hello-world/</url>
-    <content><![CDATA[<p>欢迎来到我的博客！<del>Welcome to my blog! If you get any problems when using email, you can find the answer in my <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2dhcDQwNA==">GitHub<i class="fa fa-external-link-alt"></i></span></del></p>
-<h2 id="目录-Content"><a href="#目录-Content" class="headerlink" title="目录    Content"></a>目录    <del>Content</del></h2><h3 id="Linux运维-Operation"><a href="#Linux运维-Operation" class="headerlink" title="Linux运维    Operation"></a>Linux运维    <del>Operation</del></h3><h3 id="服务器-Server"><a href="#服务器-Server" class="headerlink" title="服务器   Server"></a>服务器   <del>Server</del></h3><h3 id="非计算机-Not-Computer"><a href="#非计算机-Not-Computer" class="headerlink" title="非计算机    Not Computer"></a>非计算机    <del>Not Computer</del></h3><h3 id="配置-Configuration"><a href="#配置-Configuration" class="headerlink" title="配置   Configuration"></a>配置   <del>Configuration</del></h3><h3 id="有兴趣的话-怎么联系我"><a href="#有兴趣的话-怎么联系我" class="headerlink" title="有兴趣的话,怎么联系我"></a>有兴趣的话,怎么联系我</h3><p>email:<span class="exturl" data-url="bWFpbHRvOiYjeDM4OyYjMTIyOyYjeDZjOyYjOTc7JiMxMTc7JiMxMTA7JiMxMDY7JiMxMTg7JiM2NDsmI3g2ZTsmIzExMTsmI3g3MjsmI3g2MTsmIzExMDsmIzExNDsmIzExMTsmIzQ2OyYjOTc7JiN4NmU7JiMxMTE7JiMxMTA7JiM5NzsmIzEwMDsmI3g2NDsmIzEyMTsmI3gyZTsmIzk5OyYjeDZmOyYjMTA5Ow==">8zlaunjv@noranro.anonaddy.com<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly9iYWlkdS5jb20vcz93ZD0lRTYlODglOTElRTglODIlQUYlRTUlQUUlOUElRTQlQjglOEQlRTUlOTElOEElRTglQUYlODklRTQlQkQlQTA=">telegram<i class="fa fa-external-link-alt"></i></span></p>
-]]></content>
-      <categories>
-        <category>blog</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Linux 编辑器</title>
     <url>/2026/01/10/hi/</url>
     <content><![CDATA[<p>待完善</p>
@@ -204,6 +194,15 @@
         <tag>Linux</tag>
         <tag>Conf</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>欢迎来到我的博客</title>
+    <url>/2026/11/17/hello-world/</url>
+    <content><![CDATA[<p>欢迎来到我的博客！<del>Welcome to my blog! If you get any problems when using email, you can find the answer in my <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2dhcDQwNA==">GitHub<i class="fa fa-external-link-alt"></i></span></del></p>
+<h2 id="目录-Content"><a href="#目录-Content" class="headerlink" title="目录    Content"></a>目录    <del>Content</del></h2><h3 id="Linux运维-Operation"><a href="#Linux运维-Operation" class="headerlink" title="Linux运维    Operation"></a>Linux运维    <del>Operation</del></h3><h3 id="服务器-Server"><a href="#服务器-Server" class="headerlink" title="服务器   Server"></a>服务器   <del>Server</del></h3><h3 id="非计算机-Not-Computer"><a href="#非计算机-Not-Computer" class="headerlink" title="非计算机    Not Computer"></a>非计算机    <del>Not Computer</del></h3><h3 id="配置-Configuration"><a href="#配置-Configuration" class="headerlink" title="配置   Configuration"></a>配置   <del>Configuration</del></h3>]]></content>
+      <categories>
+        <category>blog</category>
+      </categories>
   </entry>
   <entry>
     <title>lazygit</title>
